@@ -1,0 +1,34 @@
+{
+    "team": [
+        {
+            "userId": 1,
+            "fistName": "Jessica",
+            "lastName": "Yustres",
+            "gmail": "",
+            "job": "Diseñador",
+            "description": "Uso la aplicacion pepito",
+            "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782",
+            "state": true
+        },
+        {
+            "userId": 2,
+            "fistName": "Jessica",
+            "lastName": "Yustres",
+            "gmail": "",
+            "job": "Diseñador",
+            "description": "Uso la aplicacion pepito",
+            "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782",
+            "state": true
+        },
+        {
+            "userId": 3,
+            "fistName": "Jessica",
+            "lastName": "Yustres",
+            "gmail": "",
+            "job": "Diseñador",
+            "description": "Uso la aplicacion pepito",
+            "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782",
+            "state": true
+        }
+    ]
+}

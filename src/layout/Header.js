@@ -1,17 +1,16 @@
 import React from "react";
 import "./Header.scss";
-import {
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-  useLocation,
-  Navigate,
-  Outlet,
-} from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+
 import { AuthStatus } from "../components/Auth/Auth";
-import {} from "./../pages/public/home";
+
 function Headers({ children }) {
+  let navigate = useNavigate();
+  let params = useParams();
+  function handleChange(value) {
+    navigate(`${value}`, { replace: true });
+    value = "";
+  }
   const handleLogout = () => {
     /* setUser(null); */
     /* noteService.setToken(null) */
@@ -24,54 +23,45 @@ function Headers({ children }) {
       <div className="aligner aligner--spaceBetween">
         <div className="aligner aligner--contentStart">
           <div>
-            <img
-              src="https://sierra-library.github.io/img/sierra.svg"
-              width="50"
-            />
+            <img src="./../assets/LargeLogo.png" width="50" />
           </div>
-          <h1>Desarrollo Colectivo</h1>
+          <Link to="/home" className="tabs-item">
+            <h1>Desarrollo Colectivo</h1>
+          </Link>{" "}
         </div>
         <div></div>
         <div>
           {" "}
           <div className="tabs header-app">
-            <Link to="/invoices" className="tabs-item is-selected">
-              Invoices
-            </Link>{" "}
-            |{" "}
-            <Link to="/expenses" className="tabs-item">
-              Expenses
-            </Link>
-            |{" "}
             <Link to="/about" className="tabs-item">
               about
-            </Link>
-            |{" "}
-            <Link to="/team" className="tabs-item">
-              team
+            </Link>{" "}
+            <Link to="/invoices" className="tabs-item">
+              UdlaVerso
+            </Link>{" "}
+            <Link to="/teams" className="tabs-item">
+              teams
             </Link>
             {/*  <div className="tabs-item select formCollapsed-item  "> */}
             <select
+              onChange={(event) => handleChange(event.target.value)}
               className="tabs-item header-app"
-              name="service"
-              id="service"
-              placeholder="hola"
-              title="Service"
             >
-              <option>Services </option>
-              <option>Kelly</option>
-              <option>Doyle </option>
-              <option>Lt. William</option>
+              <option value="/service" className="tabs-item">
+                Services
+              </option>
+              <option value="/login" className="tabs-item">
+                {" "}
+                login
+              </option>
+              <option value="/expenses">Expenses</option>
+              <option value="/manager">Manager</option>
             </select>
-            {/*  </div> */}|{" "}
-            <Link to="/home" className="tabs-item">
-              home
+            {/*  </div> */}
+            <Link to="/help" className="tabs-item">
+              Ayuda
             </Link>{" "}
-            |
-            <Link to="/login" className="tabs-item">
-              login{" "}
-            </Link>
-            |<div className="tabs-item">{children}</div>
+            <div className="tabs-item">{children}</div>
           </div>
         </div>{" "}
         <div className="aligner aligner--contentEnd">

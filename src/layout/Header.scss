@@ -1,6 +1,19 @@
  @import './../scss/utils/variables';
 .header-app{
     background: $primary-color;
+    font-size: 1em;
+    text-transform: uppercase;
     color: rgb(255, 255, 255);
+    Link{color: $c-text;}
+}
+
+
+.header-service{
+    background: $primary-color;
+    color: rgb(255, 255, 255);
+    border-top: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    
     Link{color: $c-text;}
 }

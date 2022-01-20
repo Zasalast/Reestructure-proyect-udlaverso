@@ -6,7 +6,7 @@ const baseUrl = `${url2}/persons`;
 
 let token = null;
 
-const setToken = (newToken) => {
+export const setToken = (newToken) => {
   token = `Bearer ${newToken}`;
 };
 
@@ -17,26 +17,22 @@ export const getAll = () => {
   return request.then((response) => response.data);
 };
 
-export const create = (newObject) => {
+export const createPersonService = (newObject) => {
   const config = {
     headers: {
       Authorization: token,
     },
   };
-
   const request = axios.post(baseUrl, newObject, config);
   return request.then((response) => response.data);
 };
 
-export const update = (id, newObject) => {
+export const updatePersonService = (id, newObject) => {
   const config = {
     headers: {
       Authorization: token,
     },
   };
-
   const request = axios.put(`${baseUrl}/${id}`, newObject, config);
   return request.then((response) => response.data);
 };
-
-export default { getAll, create, update, setToken };

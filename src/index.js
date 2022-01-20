@@ -7,14 +7,16 @@ import { BrowserRouter } from "react-router-dom";
 import RoutesApp from "./routes/routes";
 import Headers from "./layout/Header";
 import { datePageWeb } from "./store/store";
+import Footers from "./layout/Footer";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={datePageWeb()}>
       <BrowserRouter>
         <Headers />
-        <div class="container">
+        <div className="container">
           <RoutesApp />
         </div>
+        <Footers />
       </BrowserRouter>{" "}
     </Provider>
   </React.StrictMode>,
