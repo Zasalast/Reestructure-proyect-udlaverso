@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Header.scss";
 import {
   Routes,
   Route,
@@ -9,36 +9,84 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
-import { Layout, Menu, Breadcrumb } from "antd";
-
-const { Header, Content, Footer } = Layout;
+import { AuthStatus } from "../components/Auth/Auth";
+import {} from "./../pages/public/home";
 function Headers({ children }) {
+  const handleLogout = () => {
+    /* setUser(null); */
+    /* noteService.setToken(null) */
+    window.localStorage.removeItem("loggedNoteAppUser");
+  };
   return (
-    <div>
+    <div className="header-app">
       {" "}
-      <Header>
-        <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+      <div className="logo" />
+      <div className="aligner aligner--spaceBetween">
+        <div className="aligner aligner--contentStart">
+          <div>
+            <img
+              src="https://sierra-library.github.io/img/sierra.svg"
+              width="50"
+            />
+          </div>
           <h1>Desarrollo Colectivo</h1>
-          {/*   <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >  */}
-          <Menu.Item key="1">
-            {" "}
-            <Link to="/invoices">Invoices</Link> |{" "}
-          </Menu.Item>
-          <Menu.Item key="2">
-            {" "}
-            <Link to="/expenses">Expenses</Link>|{" "}
-          </Menu.Item>{" "}
-          <Link to="/about">about</Link>| <Link to="/team">team</Link>|{" "}
-          <Link to="/home">home</Link>|<Link to="/login">login</Link>|{children}
-          {/*   </nav> */}
-        </Menu>
-      </Header>
+        </div>
+        <div></div>
+        <div>
+          {" "}
+          <div className="tabs header-app">
+            <Link to="/invoices" className="tabs-item is-selected">
+              Invoices
+            </Link>{" "}
+            |{" "}
+            <Link to="/expenses" className="tabs-item">
+              Expenses
+            </Link>
+            |{" "}
+            <Link to="/about" className="tabs-item">
+              about
+            </Link>
+            |{" "}
+            <Link to="/team" className="tabs-item">
+              team
+            </Link>
+            {/*  <div className="tabs-item select formCollapsed-item  "> */}
+            <select
+              className="tabs-item header-app"
+              name="service"
+              id="service"
+              placeholder="hola"
+              title="Service"
+            >
+              <option>Services </option>
+              <option>Kelly</option>
+              <option>Doyle </option>
+              <option>Lt. William</option>
+            </select>
+            {/*  </div> */}|{" "}
+            <Link to="/home" className="tabs-item">
+              home
+            </Link>{" "}
+            |
+            <Link to="/login" className="tabs-item">
+              login{" "}
+            </Link>
+            |<div className="tabs-item">{children}</div>
+          </div>
+        </div>{" "}
+        <div className="aligner aligner--contentEnd">
+          <div>
+            <button
+              onClick={() => handleLogout}
+              className="button  button--transparent"
+            >
+              logout
+            </button>
+            {/*  <button onClick={() => handleLogout}>logout</button> */}
+          </div>
+          {/*    <AuthStatus /> */}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,42 @@
+@charset 'UTF-8';
+@import 'sierra-library/lib/index';
+ 
+
+@import './scss/utils/variables';
+
+
+ // Customize theme
+@import './scss/custom-settings';
+
+// Adding library
+@import 'sierra-library/lib/index';
+// Settings
+@import './scss/settings';
+// Utils
+@import './scss/utils/breakpoints';
+@import './scss/utils/reset';
+@import './scss/utils/default';
+@import './scss/utils/background';
+@import './scss/utils/border';
+@import './scss/utils/aligner';
+@import './scss/utils/helpers';
+@import './scss/utils/layout';
+@import './scss/utils/typography';
+
+// Components
+@import './scss/components/badge';
+@import './scss/components/buttons';
+@import './scss/components/forms';
+@import './scss/components/loading-bar';
+@import './scss/components/loading-spinner';
+@import './scss/components/notification';
+@import './scss/components/paginator';
+@import './scss/components/table';
+@import './scss/components/tabs';
+@import './scss/components/tag';
+
+// Twitter bootstrap's grid v4.1.0
+// More info: https://getbootstrap.com/examples/grid/
+@import './scss/grid/grid-framework';
+@import './scss/grid/grid';
+@import './scss/utils/grid';

@@ -1,0 +1,6 @@
+ @import './../scss/utils/variables';
+.header-app{
+    background: $primary-color;
+    color: rgb(255, 255, 255);
+    Link{color: $c-text;}
+}

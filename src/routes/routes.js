@@ -18,7 +18,6 @@ function RoutesApp() {
   };
   return (
     <AuthProvider>
-      <button onClick={() => handleLogout}>logout</button>
       {/*routes public*/}
       <Routes>
         <Route path="/" element={<Layout />}>
