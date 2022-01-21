@@ -12,6 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={datePageWeb()}>
       <BrowserRouter>
+        {console.log(process.env.REACT_APP_API_URL, "env")}
         <Headers />
         <div className="container">
           <RoutesApp />

@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import JSONPretty from "react-json-pretty";
 const Profile = () => {
   const { user, isAuthenticated, isLoading } = useState(null);
-
   if (isLoading) {
     return <div>Loading ...</div>;
   }
-
   return (
     isAuthenticated && (
       <div>

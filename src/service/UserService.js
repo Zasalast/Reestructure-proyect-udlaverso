@@ -1,15 +1,28 @@
 import axios from "axios";
-const baseUrl = "https://udlaverso.herokuapp.com/auth/login";
+
+const baseUrl = process.env.REACT_APP_API_URL;
 const baseUrlUser = "https://udlaverso.herokuapp.com/users";
-export const LoginService = async (credentials) => {
+
+let token = null;
+
+const setToken = (newToken) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${newToken}`,
+    },
+  };
+  token = config;
+};
+
+const LoginService = async (credentials) => {
   console.log(baseUrl, credentials);
   const { data } = await axios.post(baseUrl, credentials);
   return data;
 };
 
-export const CreateUserService = async (credentials) => {
+const CreateUserService = async (credentials) => {
   console.log(baseUrlUser, credentials);
   const { data } = await axios.post(baseUrlUser, credentials);
   return data;
 };
-/* export { login, CreateUserService }; */
+export { LoginService, CreateUserService };

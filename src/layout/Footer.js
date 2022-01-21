@@ -1,11 +1,10 @@
 import React from "react";
-import { Layout } from "antd";
-const { Footer } = Layout;
+
 const Footers = () => {
   return (
-    <Footer style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center" }}>
       {" "}
-      <div className="container">
+      <div className="container m-medium">
         <div className="row">
           <div className="container-medium col l6 s12 ">
             <h5 className="white-text">Udla Verso</h5>
@@ -43,7 +42,7 @@ const Footers = () => {
         </div>
       </div>
       <div className="footer-copyright">
-        <div className="container">
+        <div className="container m-medium">
           ©2022 Created by Desarrollo Colectivo <br />
           <a
             className="grey-text text-lighten-4 right"
@@ -53,7 +52,7 @@ const Footers = () => {
           </a>
         </div>
       </div>
-    </Footer>
+    </div>
   );
 };
 export default Footers;

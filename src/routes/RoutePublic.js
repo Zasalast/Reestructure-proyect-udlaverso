@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "../layout/Layout";
 import { LoginPage } from "../pages/public/Login";
-import { About } from "../pages/public/about";
+import { About } from "../pages/public/About/About";
 import { Home } from "../pages/public/home";
 import { Teams } from "../pages/public/Teams";
 import { Expenses } from "../pages/public/expenses";

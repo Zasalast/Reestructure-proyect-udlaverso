@@ -1,13 +1,17 @@
 import axios from "axios";
-import { getConfig } from "@testing-library/react";
-const url = getConfig.baseUrl;
+
 const url2 = "https://udlaverso.herokuapp.com";
 const baseUrl = `${url2}/persons`;
 
 let token = null;
 
 export const setToken = (newToken) => {
-  token = `Bearer ${newToken}`;
+  const config = {
+    headers: {
+      Authorization: `Bearer ${newToken}`,
+    },
+  };
+  token = config;
 };
 
 export const getAll = () => {

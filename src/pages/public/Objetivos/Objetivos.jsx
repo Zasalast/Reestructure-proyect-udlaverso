@@ -1,11 +1,11 @@
 const Objetivos = () => {
     return (
-        <div>
-            <div>
+        <div className="m-medium">
+            <div className="m-medium">
                 General: Brindar un espacio para aprender y desarrollar redes de
                 computadoras y juegos, en el proceso de una investigación
                 formativa.{" "}
-                <ul>
+                <ul className="m-small">
                     <li>
                         1. Ofrecer un espacio de intercambio de conocimiento en
                         redes de computadoras, contenidos digitales y el
@@ -19,21 +19,21 @@ const Objetivos = () => {
                     </ol>
                 </ul>
             </div>
-            <div>
+            <div className="m-medium">
                 <h3> LINEAS DE INVESTIGACIÓN</h3>
                 <h5>1. Informática Educativa"</h5>
             </div>{" "}
-            <div>
+            <div className="m-medium">
                 {" "}
                 <h3>ENTIDADES PARTICIPANTES</h3>{" "}
             </div>
-            <div>
+            <div className="m-medium">
                 <img
                     alt="example"
                     src="https://lh3.googleusercontent.com/6dYvEhqmRs2qKgMb6f7_aVU1htRtT3Q71edPjp4m3FbaHuqHJybl3yajdgDmZ17bmFqhxh3zWNeHaV2iqa8Un6tbqlQcBXOA8M4fstLnODQ9GlDu=w1280"
                 />
             </div>
-            <div>
+            <div className="m-medium">
                 {" "}
                 <img
                     alt="example"

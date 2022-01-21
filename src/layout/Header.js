@@ -1,7 +1,7 @@
 import React from "react";
 import "./Header.scss";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
+import logo from "./../assets/Aventuras en equipo .png";
 import { AuthStatus } from "../components/Auth/Auth";
 
 function Headers({ children }) {
@@ -22,8 +22,8 @@ function Headers({ children }) {
       <div className="logo" />
       <div className="aligner aligner--spaceBetween">
         <div className="aligner aligner--contentStart">
-          <div>
-            <img src="./../assets/LargeLogo.png" width="50" />
+          <div className="">
+            <img className="logo-header" src={logo} width="80" />
           </div>
           <Link to="/home" className="tabs-item">
             <h1>Desarrollo Colectivo</h1>
@@ -34,11 +34,22 @@ function Headers({ children }) {
           {" "}
           <div className="tabs header-app">
             <Link to="/about" className="tabs-item">
-              about
+              ¿Quiénes Somos?
             </Link>{" "}
-            <Link to="/invoices" className="tabs-item">
-              UdlaVerso
-            </Link>{" "}
+            <select
+              onChange={(event) => handleChange(event.target.value)}
+              className="tabs-item header-app"
+            >
+              <option disabled className="tabs-item">
+                udlaVerso
+              </option>
+              <option value="/login" className="tabs-item">
+                {" "}
+                Video word builder
+              </option>
+              <option value="/expenses">cuentas udla verso</option>
+              <option value="/manager">configuracion visor</option>
+            </select>
             <Link to="/teams" className="tabs-item">
               teams
             </Link>
@@ -47,6 +58,10 @@ function Headers({ children }) {
               onChange={(event) => handleChange(event.target.value)}
               className="tabs-item header-app"
             >
+              <option disabled className="tabs-item">
+                Services
+              </option>
+
               <option value="/service" className="tabs-item">
                 Services
               </option>

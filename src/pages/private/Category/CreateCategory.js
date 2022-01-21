@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { CreateCategoryService } from "../../../service/CategoryService";
+
+import {
+  CreateCategoryService,
+  setToken,
+} from "../../../service/CategoryService";
 
 function CreateCategory() {
   const [name, setName] = useState("");
   const [category, setCategory] = useState(null);
-  const [access_token, setAccessToken] = useState(null);
-  const config = {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  };
-  const handleLogin = async (event) => {
+
+  const [user, setUser] = useState(null);
+
+  const handleCategory = async (event) => {
     event.preventDefault();
     console.log(event.target.value, "hola");
+    setToken(user.token);
     try {
-      const category = await CreateCategoryService.login({
-        name,
-      });
+      const category = await CreateCategoryService(
+        {
+          name,
+        },
+        user.token
+      );
       console.log(category);
-      /*   window.localStorage.setItem(
-            'loggedNoteAppUser', JSON.stringify(user)
-          ) */
-      /*  noteService.setToken(user.token) */
+
       setCategory(category);
 
       setCategory("");
@@ -33,25 +35,25 @@ function CreateCategory() {
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser");
     if (loggedUserJSON) {
-      /* const user = JSON.parse(loggedUserJSON);
-      setUser(user); */
-      /*   noteService.setToken(user.token) */
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user);
+      setToken(user.token);
     }
   }, []);
 
   return (
     <div>
-      <p>{access_token + ""}</p>
-      <form onSubmit={handleLogin}>
+      <h2>Crear Categoria</h2>
+      <form onSubmit={handleCategory}>
         <h1 className="text-center text-uppercase text-success text-big aligner aligner--centerHoritzontal aligner--centerVertical">
           login
         </h1>
         <div className="input input-fullWidth">
           <input
             type="text"
-            name="Email"
+            name="name"
             value={name}
-            placeholder="Email"
+            placeholder="Nombre Categoria"
             onChange={({ target }) => setCategory(target.value)}
           />
         </div>

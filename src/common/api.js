@@ -3,7 +3,7 @@ import { Token } from "./Storage/Token";
 import { store } from "../index";
 import { auth } from "../services/Auth/AuthActions";
 
-const apiUrl = "http://localhost:3001";
+const apiUrl = "https://udlaverso.herokuapp.com/";
 // const apiUrl = 'http://innovateserver.noip.me:3001'
 
 export class Api {

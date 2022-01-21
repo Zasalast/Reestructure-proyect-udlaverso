@@ -89,7 +89,7 @@ function LoginPage() {
           </h1>
           <div class="input input-fullWidth">
             <input
-              type="text"
+              type="email"
               name="Email"
               value={email}
               placeholder="Email"

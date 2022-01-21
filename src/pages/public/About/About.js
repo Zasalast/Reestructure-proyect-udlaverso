@@ -1,12 +1,15 @@
 import React from "react";
-import MV from "./misionvision/MisionVision";
-import Metodologia from "./servicesOffered/Metodologia/Metodologia";
+import { MisionVision } from "./../misionvision/MisionVision";
+import { Metodologia } from "./../servicesOffered/Metodologia/Metodologia";
 
 const About = () => {
   return (
-    <>
+    <div className="container">
       {" "}
-      <h2>¿Quiénes Somos?</h2>
+      <div>
+        <img class="opacity-low" src={MisionVision} width="100%" />
+        <h2 className="text-huge">¿Quiénes Somos?</h2>
+      </div>
       <p>
         En la búsqueda de sinergias para el desarrollo de las redes informáticas
         y los videojuegos desde la Universidad de la Amazonia - Florencia
@@ -25,12 +28,12 @@ const About = () => {
         </p>
       </article>
       <article>
-        <MV />
+        <MisionVision />
       </article>
       <article>
         <Metodologia />
       </article>
-    </>
+    </div>
   );
 };
-export default About;
+export { About };
