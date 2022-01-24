@@ -18,6 +18,7 @@ import { Metodologia } from "../pages/public/servicesOffered/Metodologia/Metodol
 import { VideoWordBuilder } from "../pages/public/VideoWordBuilder/VideoWordBuilder";
 import AccountUdlaVerso from "../pages/public/AccountUdlaVerso/AccountUdlaVerso";
 import { ConfigVisor } from "../pages/public/ConfigVisor/ConfigVisor";
+import { WorkWithUs } from "../pages/public/WorkWithUs/WorkWithUs";
 
 function RoutePublic() {
   return (
@@ -34,6 +35,8 @@ function RoutePublic() {
         <Route path="services" element={<ServicesOffered />} />
         <Route path="help" element={<Help />} />
         <Route path="videowordbuilder" element={<VideoWordBuilder />} />
+
+        <Route path="workwithus" element={<WorkWithUs />} />
         <Route path="accountudlaverso" element={<AccountUdlaVerso />} />
         <Route path="configvisor" element={<ConfigVisor />} />
         <Route path="invoices" element={<Invoices />}>

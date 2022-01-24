@@ -87,6 +87,9 @@ function Headers({ children }) {
               </option>
             </select>
             {/*  </div> */}
+            <Link to="/workwithus" className="tabs-item header-item">
+              Trabaja con nosotros
+            </Link>
             <Link to="/help" className="tabs-item header-item">
               Ayuda
             </Link>{" "}
