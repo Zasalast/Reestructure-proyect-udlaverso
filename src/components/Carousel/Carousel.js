@@ -18,7 +18,7 @@ const contentStyle = {
 function Carouse() {
   let mountNode = document.getElementById("container");
   return (
-    <div className="section bg-dark">
+    <div className="container m-medium border section bg-dark">
       <div id="container" />
       <div className="container text-center">
         <div>

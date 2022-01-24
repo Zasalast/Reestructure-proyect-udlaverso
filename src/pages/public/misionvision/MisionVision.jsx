@@ -9,7 +9,7 @@ import redesempresariales2 from "./../../../assets/Aventuras en equipo.png";
 
 const MisionVision = () => {
     return (
-        <div className="content row">
+        <div className="container m-medium border  row">
             <img src={redesempresariales} /> <img src={redesempresariales2} />{" "}
             <img alt="example" src={red_trabaje} />
             <a href="https://sites.google.com/view/redes3d/qui%C3%A9nes-somos"></a>

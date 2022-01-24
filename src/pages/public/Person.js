@@ -7,7 +7,7 @@ export default function Person() {
   let person = getInvoice(parseInt(params.invoiceId, 10));
 
   return (
-    <main style={{ padding: "1rem" }}>
+    <main style={{ padding: "1rem" }} className="container m-medium border">
       <h2>Total Due: {person.amount}</h2>
       <p>
         {person.name}: {person.number}

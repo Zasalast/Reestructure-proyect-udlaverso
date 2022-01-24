@@ -2,7 +2,7 @@ import React from "react";
 
 const Footers = () => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center" }} className="p-huge">
       {" "}
       <div className="container m-medium">
         <div className="row">
@@ -42,7 +42,7 @@ const Footers = () => {
         </div>
       </div>
       <div className="footer-copyright">
-        <div className="container m-medium">
+        <div className="container m-medium p-huge">
           ©2022 Created by Desarrollo Colectivo <br />
           <a
             className="grey-text text-lighten-4 right"

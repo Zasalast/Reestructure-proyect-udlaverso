@@ -8,26 +8,81 @@ import ima_media from "./../../assets/construccion-media.png";
 import ima_large from "./../../assets/construccion-large.jpg";
 import ima_udla from "./../../assets/orange-planets-background3.jpg";
 import ima_udlainsc from "./../../assets/incribete.jpeg";
-import { Carouse } from "../../components/Carousel/Carousel";
+import ima_udlahome from "./../../assets/udlaversohome.jpeg";
+import ima_udlahome2 from "./../../assets/udlalogo.jpg";
+import ima_udlahome3 from "./../../assets/orange-planets-background3.jpg";
+/* import { Carouse } from "../../components/Carousel/Carousel"; */
 function Home() {
   return (
-    <div>
-      <ServicesOffered />
-      <Carouse />
+    <div className="container m-medium border">
+      {/* <ServicesOffered /> */}
+      <picture className="section bg-dark">
+        <div className="container text-center">
+          <img
+            alt="Es un computador"
+            src={ima_udlahome}
+            height="300vh"
+            width="800vw"
+          />
+        </div>
+      </picture>{" "}
       <div className="c1">
         <img
           alt="Es un computador"
           src={ima_udlainsc}
           height="300vh"
           width="800vw"
-        />
+        />{" "}
         {/*  <button><a href="/w3d/login"><i className="fas fa-user-circle fa-2x" /> </a></button> */}
+        {/* <Carouse /> */}
+        <ServicesOffered />
       </div>
       <div className="c2">
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/SZOrf_zTFkc"
+          src="https://www.youtube.com/embed/QQiCwOREkDQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+          3ER CONGRESO INTERNACIONAL DE TIC PARA LA AMAZONÍA
+        </iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/rlFf6I1UhkA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        >
+          3ER CONGRESO INTERNACIONAL DE TIC PARA LA AMAZONÍA - 18 NOV - JORNADA
+          TARDE
+        </iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/KooqsU8vjtw?start=9020"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/mfb9Mqmk5fI?start=12550"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/An_5o51pU2w?start=3205"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -88,7 +143,7 @@ function Home() {
       <div className="c6">
         <img
           alt="Es un computador"
-          src="http://152.200.138.122:9000/wifi/images/diva.png"
+          src={ima_udlahome2}
           sizes="(max-width: 400px) 100vw  100vw, (max-width: 500px) 50vw, 900px"
           height="120vh"
           /*  srcset="./../../../assets/construccion-small.png 100w,
@@ -96,8 +151,20 @@ function Home() {
     ./../../../assets/construccion-large.png 1200w" */
         />
         <img
-          alt="Es un computador"
-          src="http://152.200.138.122:9000/wifi/images/PoweredByOS.png"
+          alt="Es un computadors"
+          src={ima_udlahome}
+          sizes="(max-width: 400px) 100vw  100vw, (max-width: 500px) 50vw, 900px"
+          height="120vh"
+        />
+        <img
+          alt="Es un computadors"
+          src={ima_udlahome2}
+          sizes="(max-width: 400px) 100vw  100vw, (max-width: 500px) 50vw, 900px"
+          height="120vh"
+        />
+        <img
+          alt="Es un computadors"
+          src={ima_udlahome3}
           sizes="(max-width: 400px) 100vw  100vw, (max-width: 500px) 50vw, 900px"
           height="120vh"
         />

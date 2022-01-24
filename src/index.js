@@ -13,7 +13,9 @@ ReactDOM.render(
     <Provider store={datePageWeb()}>
       <BrowserRouter>
         {console.log(process.env.REACT_APP_API_URL, "env")}
-        <Headers />
+        <div className="header">
+          <Headers />
+        </div>
         <div className="container">
           <RoutesApp />
         </div>

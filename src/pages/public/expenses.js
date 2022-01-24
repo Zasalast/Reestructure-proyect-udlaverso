@@ -15,7 +15,7 @@ import About from "./about";   */
 
 function Expenses() {
   return (
-    <div>
+    <div className="container m-medium border">
       {" "}
       {/* <AuthProvider> */}
       <h1>Auth Example</h1>

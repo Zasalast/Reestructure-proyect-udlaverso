@@ -2,7 +2,7 @@ import React from "react";
 import "./Help.scss";
 function Help() {
   return (
-    <div className="container">
+    <div className="container m-medium border">
       <div>
         <h1>Centro de Ayuda</h1>
       </div>

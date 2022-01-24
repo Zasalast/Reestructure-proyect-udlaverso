@@ -33,7 +33,7 @@ const Teams = () => {
   }
 
   return (
-    <>
+    <div className="container m-medium border">
       <h2>Team</h2>;{" "}
       <a href="https://sites.google.com/view/redes3d/qui%C3%A9nes-somos">
         {/* <div>{data.team}</div> */}
@@ -65,7 +65,7 @@ const Teams = () => {
           </div>
         </div>
       </a>
-    </>
+    </div>
   );
 };
 export { Teams };

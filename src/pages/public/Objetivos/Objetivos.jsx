@@ -1,17 +1,23 @@
 const Objetivos = () => {
     return (
         <div className="m-medium">
-            <div className="m-medium">
-                General: Brindar un espacio para aprender y desarrollar redes de
+            <div>
+                <h4 className="text-huge">General</h4>
+            </div>
+            <div className="m-medium text-medium">
+                Brindar un espacio para aprender y desarrollar redes de
                 computadoras y juegos, en el proceso de una investigación
                 formativa.{" "}
                 <ul className="m-small">
-                    <li>
+                    <div>
+                        <h4 className="text-huge">Especificos</h4>
+                    </div>
+                    <li className="m-medium text-medium">
                         1. Ofrecer un espacio de intercambio de conocimiento en
                         redes de computadoras, contenidos digitales y el
                         desarrollo de videojuegos.
                     </li>
-                    <ol>
+                    <ol className="m-medium text-medium">
                         2. Fomentar en los participantes el desarrollo de
                         habilidades básicas de investigación en temas
                         relacionados con las redes de datos los videojuegos y

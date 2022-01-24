@@ -14,21 +14,28 @@ import { Help } from "../pages/public/Help/Help";
 import { ServicesOffered } from "../pages/public/servicesOffered/ServicesOffered";
 import { Objetivos } from "../pages/public/Objetivos/Objetivos";
 import { MisionVision } from "../pages/public/misionvision/MisionVision";
+import { Metodologia } from "../pages/public/servicesOffered/Metodologia/Metodologia";
+import { VideoWordBuilder } from "../pages/public/VideoWordBuilder/VideoWordBuilder";
+import AccountUdlaVerso from "../pages/public/AccountUdlaVerso/AccountUdlaVerso";
+import { ConfigVisor } from "../pages/public/ConfigVisor/ConfigVisor";
 
 function RoutePublic() {
   return (
     <Routes>
       {/*routes public*/}
       <Route path="/" element={<Layout />}>
-        <Route index path="home" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="expenses" element={<Expenses />} />
         <Route path="objetive" element={<Objetivos />} />
-        <Route path="mv" element={<MisionVision />} />
+        <Route path="metodologia" element={<Metodologia />} />
+        <Route path="misionvision" element={<MisionVision />} />
         <Route path="teams" element={<Teams />} />
         <Route path="services" element={<ServicesOffered />} />
         <Route path="help" element={<Help />} />
+        <Route path="videowordbuilder" element={<VideoWordBuilder />} />
+        <Route path="accountudlaverso" element={<AccountUdlaVerso />} />
+        <Route path="configvisor" element={<ConfigVisor />} />
         <Route path="invoices" element={<Invoices />}>
           <Route
             index
@@ -41,6 +48,7 @@ function RoutePublic() {
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
       </Route>
+      <Route index path="home" element={<Home />} />
     </Routes>
   );
 }

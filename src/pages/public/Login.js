@@ -70,11 +70,11 @@ function LoginPage() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
+    <div className="container m-medium border  ">
+      <div className="row p-huge">
         <p className="mb-small">You must log in to view the page at {from}</p>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="p-huge">
           <label>
             {" "}
             Username: <input name="username" type="text" />

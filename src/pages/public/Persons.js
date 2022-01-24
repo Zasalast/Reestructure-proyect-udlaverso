@@ -26,7 +26,7 @@ function Persons() {
     }
   }; */
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex" }} className="container m-medium border">
       <nav
         style={{
           borderRight: "solid 1px",
