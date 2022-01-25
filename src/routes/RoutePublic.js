@@ -19,6 +19,7 @@ import { VideoWordBuilder } from "../pages/public/VideoWordBuilder/VideoWordBuil
 import AccountUdlaVerso from "../pages/public/AccountUdlaVerso/AccountUdlaVerso";
 import { ConfigVisor } from "../pages/public/ConfigVisor/ConfigVisor";
 import { WorkWithUs } from "../pages/public/WorkWithUs/WorkWithUs";
+import WhatDoWeDo from "../pages/public/WhatDoWeDo/WhatDoWeDo";
 
 function RoutePublic() {
   return (
@@ -37,6 +38,7 @@ function RoutePublic() {
         <Route path="videowordbuilder" element={<VideoWordBuilder />} />
 
         <Route path="workwithus" element={<WorkWithUs />} />
+        <Route path="whatdoWedo" element={<WhatDoWeDo />} />
         <Route path="accountudlaverso" element={<AccountUdlaVerso />} />
         <Route path="configvisor" element={<ConfigVisor />} />
         <Route path="invoices" element={<Invoices />}>

@@ -17,7 +17,7 @@ function Headers({ children }) {
     window.localStorage.removeItem("loggedNoteAppUser");
   };
   return (
-    <div className="container header">
+    <div className="container header aligner aligner--spaceBetween">
       {" "}
       {/* <div className="logo" /> */}
       <div className="aligner aligner--spaceBetween">
@@ -29,8 +29,8 @@ function Headers({ children }) {
         <div></div>
         <div className="header-item">
           {" "}
-          <div className="tabs header-app">
-            <div className="header-app aligner aligner--contentStart">
+          <div className="tabs header-app ">
+            <div className="header-app aligner aligner--contentStart aligner--spaceAround">
               <Link to="/home" className="tabs-item ">
                 <img className="logo-header" src={logo} width="80" />
               </Link>{" "}
@@ -86,9 +86,12 @@ function Headers({ children }) {
                 Manager
               </option>
             </select>
-            {/*  </div> */}
+            {/*  </div> */}WhatDoWeDo
             <Link to="/workwithus" className="tabs-item header-item">
               Trabaja con nosotros
+            </Link>
+            <Link to="/whatdoWedo" className="tabs-item header-item">
+              ¿Que hacemos?
             </Link>
             <Link to="/help" className="tabs-item header-item">
               Ayuda
