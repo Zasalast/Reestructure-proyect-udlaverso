@@ -21,8 +21,11 @@ border-right: 0;
 }
 .header-item{ 
 background: $primary-color;
-/*  color: rgb(255, 255, 255); */
+  color: rgb(255, 255, 255); 
  background-color: $primary-color;
+ max-height: 80px;
+ padding-left: 1px;
+ padding-right: 2px;
 }
 .logo-header{background-color: white;
 border-radius: 50%;}
@@ -36,3 +39,12 @@ font-size: 1.15em;}
     
     Link{color: $c-text;}
 } */
+.header-logout{background-color: transparent;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 2px;
+    padding-right: 2px;
+    background: transparent;
+    color: rgb(255, 255, 255);
+}

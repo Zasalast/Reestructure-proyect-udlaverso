@@ -27,80 +27,120 @@ function Headers({ children }) {
           </Link>{" "}
         </div> */}
         <div></div>
-        <div className="header-item">
+        <div className="">
           {" "}
           <div className="tabs header-app ">
-            <div className="header-app aligner aligner--contentStart aligner--spaceAround">
-              <Link to="/home" className="tabs-item ">
+            <div className="header-item tabs-item aligner--contentStart ">
+              <Link to="/home" className="header-item tabs-item ">
                 <img className="logo-header" src={logo} width="80" />
               </Link>{" "}
             </div>
-            <Link to="/about" className="tabs-item">
+            <Link
+              to="/about"
+              className="header-item tabs-item button button--transparent header-logout"
+            >
               ¿Quiénes Somos?
             </Link>{" "}
             <select
               onChange={(event) => handleChange(event.target.value)}
-              className="header-item tabs-item"
+              className="header-item tabs-item  button button--transparent header-logout"
             >
-              <option disabled className="tabs-item header-item">
+              <option
+                disabled
+                className="tabs-item button button--transparent "
+              >
                 udlaVerso
               </option>
               <option
                 value="/videowordbuilder"
-                className="tabs-item header-item"
+                className="tabs-item header-item button button--transparent"
               >
                 {" "}
                 Video word builder
               </option>
-              <option value="/accountudlaverso" className="header-item">
+              <option
+                value="/accountudlaverso"
+                className="header-item button button--transparent"
+              >
                 cuentas udla verso
               </option>
-              <option value="/configvisor" className="header-item">
+              <option
+                value="/configvisor"
+                className="header-item button button--transparent "
+              >
                 configuracion visor
               </option>
             </select>
-            <Link to="/teams" className="tabs-item header-item">
+            <Link
+              to="/teams"
+              className="header-item tabs-item button button--transparent header-logout"
+            >
               teams
             </Link>
             {/*  <div className="tabs-item select formCollapsed-item  "> */}
             <select
-              className="header-item tabs-item"
+              className="header-item tabs-item  button button--transparent header-logout"
               onChange={(event) => handleChange(event.target.value)}
               /* className="tabs-item header-app" */
             >
-              <option disabled className="header-item tabs-item ">
+              <option disabled className="tabs-item button button--transparent">
                 Services
               </option>
 
-              <option value="/service" className="tabs-item header-item">
+              <option
+                value="/service"
+                className="header-item tabs-item  button button--transparent "
+              >
                 Services
               </option>
-              <option value="/login" className="tabs-item header-item">
+              <option
+                value="/login"
+                className="header-item tabs-item button button--transparent  "
+              >
                 {" "}
                 login
               </option>
-              <option value="/expenses" className="header-item">
+              <option
+                value="/expenses"
+                className="header-item button button--transparent"
+              >
                 Expenses
               </option>
-              <option value="/manager" className="header-item">
+              <option
+                value="/manager"
+                className="header-item button button--transparent "
+              >
                 Manager
               </option>
             </select>
-            {/*  </div> */}WhatDoWeDo
-            <Link to="/workwithus" className="tabs-item header-item">
+            {/*  </div> */}
+            <Link
+              to="/workwithus"
+              className="header-item tabs-item button button--transparent header-logout"
+            >
               Trabaja con nosotros
             </Link>
-            <Link to="/whatdoWedo" className="tabs-item header-item">
+            <Link
+              to="/whatdoWedo"
+              className="header-item tabs-item button button--transparent header-logout"
+            >
               ¿Que hacemos?
             </Link>
-            <Link to="/help" className="tabs-item header-item">
+            <Link
+              to="/help"
+              className="header-item tabs-item button button--transparent header-logout"
+            >
               Ayuda
             </Link>{" "}
-            <div className="tabs-item header-item">{children}</div>{" "}
-            <div className="aligner aligner--contentEnd">
-              <div>
-                <button onClick={() => handleLogout}>logout</button>
-              </div>
+            {/* <div className="header-item tabs-item  ">{children}</div> */}{" "}
+            <div className="header-item tabs-item aligner--centerVertical  aligner--contentEnd logout-text text-white">
+              <button
+                onClick={() => handleLogout}
+                className="text-white button button--transparent    header-logout"
+              >
+                logout
+              </button>
+
               {/*    <AuthStatus /> */}
             </div>
           </div>
