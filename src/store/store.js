@@ -1,5 +1,4 @@
-import { createStore, combineReducers } from "redux";
-import { UserReducer, CopyReducer } from "../reducers/index";
+import { createStore } from "redux";
 import { loadState, saveState } from "../utils/localStorage";
 import throttle from "lodash/throttle";
 import todoApp from "./../reducers/todos";

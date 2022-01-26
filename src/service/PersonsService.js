@@ -1,13 +1,17 @@
 import axios from "axios";
-import { getConfig } from "@testing-library/react";
-const url = getConfig.baseUrl;
-const url2 = "https://udlaverso.herokuapp.com";
-const baseUrl = `${url2}/persons`;
 
+const url2 = process.env.REACT_APP_API_URL;
+const baseUrl = `${url2}/persons`;
+console.log(baseUrl, "env2");
 let token = null;
 
-const setToken = (newToken) => {
-  token = `Bearer ${newToken}`;
+export const setToken = (newToken) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${newToken}`,
+    },
+  };
+  token = config;
 };
 
 export const getAll = () => {
@@ -17,26 +21,22 @@ export const getAll = () => {
   return request.then((response) => response.data);
 };
 
-export const create = (newObject) => {
+export const createPersonService = (newObject) => {
   const config = {
     headers: {
       Authorization: token,
     },
   };
-
   const request = axios.post(baseUrl, newObject, config);
   return request.then((response) => response.data);
 };
 
-export const update = (id, newObject) => {
+export const updatePersonService = (id, newObject) => {
   const config = {
     headers: {
       Authorization: token,
     },
   };
-
   const request = axios.put(`${baseUrl}/${id}`, newObject, config);
   return request.then((response) => response.data);
 };
-
-export default { getAll, create, update, setToken };

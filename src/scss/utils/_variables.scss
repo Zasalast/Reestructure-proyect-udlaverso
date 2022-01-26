@@ -1,21 +1,30 @@
-$c-gray-light: #edf3f6;
-$c-primary: #1abc9c;
-$c-secondary: #9b59b6;
+$primary-color-dark:   #1976D2;
+$primary-color:        #2196F3;
+$primary-color-light:  #BBDEFB;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #FF4081;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+$c-gray-light: $primary-color-light;
+$c-primary: $primary-color-dark;
+$c-secondary: $primary-color;
 $c-light: #2d5680;
-$c-text: #fff;
+$c-text: $primary-color-text;
 $bdc-base: #465f78;
 $bgc-body: #04a73a21;
 $c-button-outlined: #fff;
 $bdr-button: 3px;
 
-$primary-color: #00cc3d;
+
+$primary-color: #00c8fa;
 $success-color: #1e8e3e;
 $info-color: $primary-color;
 $warning-color: #ffc440;
 $error-color: #d93026;
 $processing-color: $primary-color;
 $text-color: fade(#000, 65%);
-$text-color-secondary: fade(#000, 45%);
+$text-color-secondary: /* fade(#000, 45%) */$secondary-text-color;
 $border-color-base: #dedede;
 $border-color-split: #dedede;
 $layout-body-background: #fafafa;
@@ -59,3 +68,69 @@ $alert-warning-border-color: #fff7db;
 $alert-warning-bg-color: #fff7db;
 $alert-error-border-color: #fcebea;
 $alert-error-bg-color: #fcebea;
+
+// Screen sizes
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+$screen-xxl: 1300px;
+$screen-full: 1400px;
+
+// Colors
+$textColor: #42474C;
+$textLight1Color: #6b7177;
+
+$primaryDark2Color: #008060;
+$primaryDark1Color: #004C3F;
+$primaryColor: #0d810d;
+$primaryLight1Color: #C1F0D0;
+$primaryLight2Color: #EFFCFA;
+
+$secondaryColor: #906509;
+$secondaryLight1Color: #FBF7ED;
+$secondaryLight2Color: #FFF8F6;
+$secondaryLight3Color: #E2E6DC;
+$secondaryLight4Color: #EDE8DB;
+
+$warningColor: #C43256;
+$warningLight1Color: #c432571f;
+/* ----------------------------- *\
+|             $COLORS             |
+\* ----------------------------- */
+
+/*-------Branding colors */
+$color-brand: #ea83ee;
+$color-secondary: rgb(219, 216, 221);  
+  $color-black: rgb(0, 0, 0) ;
+$color-darkblack: #4d4d4d;
+ $color-grey: #bfbfbf;
+   $color-white: rgb(255, 255, 255)  ;
+/*-------text colors */
+$black-text:black;
+$blue-text:blue;
+$yellow-text:yellow;
+$orange-text:orange;
+$white-text:white;
+
+/*-------alerts colors */
+$danger-color:#ff0000;
+$warning-color: #ffa500;
+$success-color: #30e92c;
+$info-color: #5474f5;
+
+
+/*-------background colors */
+
+/*------- fonts styles */
+$basefont: 'Quicksand',
+Verdana,
+Geneva,
+Tahoma,
+sans-seri;
+$basefontsize: 16px;
+/*-------cols size's */
+
+/*-------elements size's */
+$buttoncolor: $color-white ;
+$buttonbackgroundcolor: $color-brand;
