@@ -4,6 +4,7 @@ import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 /* import { getInvoices } from "../../data"; */
 import api from "../../service/api2";
 import data from "./../../Data.json";
+import { Loading } from "../../components/Loading/Loading";
 const Teams = () => {
   const [state, setState] = useState({
     loading: true,
@@ -44,54 +45,64 @@ const Teams = () => {
 
   return (
     <div className="container m-medium border">
-      <h2>Team</h2>;{" "}
-      <label className="label" for="test10">
-        Buscar por nombre
-      </label>
-      <div className="input input-fullWidth">
-        {" "}
-        <input
-          id="test10"
-          placeholder="Buscar por nombre"
-          value={searchParams.get("filter") || ""}
-          onChange={(event) => {
-            let filter = event.target.value;
-            if (filter) {
-              setSearchParams({ filter });
-            } else {
-              setSearchParams({});
-            }
-          }}
-        />
-      </div>
-      <div>
-        {state.data
-          .filter((data) => {
-            let filter = searchParams.get("filter");
-            if (!filter) return true;
-            let name = data.name.toLowerCase();
-            return name.startsWith(filter.toLowerCase());
-          })
-          .map((item) => (
-            <div key={item.id} className="card flip-card">
-              <div className="flip-card-inner">
-                <div className="flip-card-front">
-                  {/* <img src="img.jpg" alt="John" style="width:100%" /> */}
-                </div>
-                <div className="flip-card-back">
-                  <h1>{item.name}</h1>
+      {state.data ? (
+        <div>
+          {" "}
+          <h2>Team</h2>{" "}
+          <label className="label" for="test10">
+            Buscar por nombre
+          </label>
+          <div className="input input-fullWidth">
+            {" "}
+            <input
+              id="test10"
+              placeholder="Buscar por nombre"
+              value={searchParams.get("filter") || ""}
+              onChange={(event) => {
+                let filter = event.target.value;
+                if (filter) {
+                  setSearchParams({ filter });
+                } else {
+                  setSearchParams({});
+                }
+              }}
+            />
+          </div>
+          <div>
+            {state.data
+              .filter((data) => {
+                let filter = searchParams.get("filter");
+                if (!filter) return true;
+                let name = data.name.toLowerCase();
+                return name.startsWith(filter.toLowerCase());
+              })
+              .map((item) => (
+                <div key={item.id} className="card flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
+                      <img src="favicon.ico" />
+                    </div>
+                    <div className="flip-card-back">
+                      <h1>{item.name}</h1>
 
-                  <p className="title">{item.lastName}</p>
-                  <p>{item.phone} </p>
+                      <p className="title">{item.lastName}</p>
+                      <p>{item.phone} </p>
 
-                  <p>
-                    <button>Contact</button>
-                  </p>
+                      <p>
+                        <button>Contact</button>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-      </div>
+              ))}
+          </div>
+        </div>
+      ) : (
+        <>
+          {" "}
+          <div class="loadingBar"></div> <Loading />
+        </>
+      )}
     </div>
   );
 };
