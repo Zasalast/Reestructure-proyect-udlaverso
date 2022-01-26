@@ -18,7 +18,7 @@ const Teams = () => {
 
   const fetchData = async () => {
     let data = null;
-    setState({ loading: true, error: null });
+    setState({...state, loading: true, error: null });
     try {
       console.log(api, "api");
       data = await getAll(); /* api.users.list; */
@@ -28,9 +28,9 @@ const Teams = () => {
       });
       console.log(data, "data");
       console.log(state, "state data");
-      setState({ loading: false, data: data });
+      setState({...state, loading: false, data: data });
     } catch (error) {
-      setState({ loading: false, error: error });
+      setState({...state, loading: false, error: error });
     }
   };
 
@@ -69,32 +69,40 @@ const Teams = () => {
             />
           </div>
           <div>
-            {state.data
-              .filter((data) => {
-                let filter = searchParams.get("filter");
-                if (!filter) return true;
-                let name = data.name.toLowerCase();
-                return name.startsWith(filter.toLowerCase());
-              })
-              .map((item) => (
-                <div key={item.id} className="card flip-card">
-                  <div className="flip-card-inner">
-                    <div className="flip-card-front">
-                      <img src="favicon.ico" />
-                    </div>
-                    <div className="flip-card-back">
-                      <h1>{item.name}</h1>
+            <table class="table">
+              <thead>
+                <tr class="text-small text-left">
+                  <th>Fotografia</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Telefono</th>
+                  <th>Ver</th>
+                </tr>
+              </thead>
+              <tbody>
+                {state.data
+                  .filter((data) => {
+                    let filter = searchParams.get("filter");
+                    if (!filter) return true;
+                    let name = data.name.toLowerCase();
+                    return name.startsWith(filter.toLowerCase());
+                  })
+                  .map((item) => (
+                    <tr key={item.id}>
+                      <td>
+                        <img src="favicon.ico" />
+                      </td>
+                      <td>{item.name}</td>
+                      <td>{item.lastName}</td>
+                      <td>{item.phone}</td>
 
-                      <p className="title">{item.lastName}</p>
-                      <p>{item.phone} </p>
-
-                      <p>
-                        <button>Contact</button>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                      <td>
+                        <button>Ver Miembro</button>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
           </div>
         </div>
       ) : (

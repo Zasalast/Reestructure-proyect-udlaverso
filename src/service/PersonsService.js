@@ -21,6 +21,21 @@ export const getAll = () => {
   return request.then((response) => response.data);
 };
 
+export const getOnePersonService =async (id) => {
+  console.log(id,"OnePersonService")
+  console.log(baseUrl,"OnePersonService")
+  console.log(`${baseUrl}/${id}`,"OnePersonService")
+try {
+  const request =await axios.get(`${baseUrl}/${id}`);
+  return request;
+} catch (error) {
+  console.log(error)
+} 
+};
+
+
+
+
 export const createPersonService = (newObject) => {
   const config = {
     headers: {
@@ -38,5 +53,14 @@ export const updatePersonService = (id, newObject) => {
     },
   };
   const request = axios.put(`${baseUrl}/${id}`, newObject, config);
+  return request.then((response) => response.data);
+};
+export const deletePersonService = (id) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  const request = axios.delete(`${baseUrl}/${id}`,  config);
   return request.then((response) => response.data);
 };

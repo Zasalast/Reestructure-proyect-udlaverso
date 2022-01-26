@@ -20,6 +20,8 @@ import AccountUdlaVerso from "../pages/public/AccountUdlaVerso/AccountUdlaVerso"
 import { ConfigVisor } from "../pages/public/ConfigVisor/ConfigVisor";
 import { WorkWithUs } from "../pages/public/WorkWithUs/WorkWithUs";
 import WhatDoWeDo from "../pages/public/WhatDoWeDo/WhatDoWeDo";
+import Person from "../pages/public/Person";
+import { Persons } from "../pages/public/Persons";
 
 function RoutePublic() {
   return (
@@ -41,6 +43,20 @@ function RoutePublic() {
         <Route path="whatdoWedo" element={<WhatDoWeDo />} />
         <Route path="accountudlaverso" element={<AccountUdlaVerso />} />
         <Route path="configvisor" element={<ConfigVisor />} />
+        <Route index path="home" element={<Home />} />
+
+        <Route path="persons" element={<Persons />}>
+          <Route
+            index
+            element={
+              <main style={{ padding: "1rem" }}>
+                <p>Select an person</p>
+              </main>
+            }
+          />
+          <Route path=":personId" element={<Person />} />
+        </Route>
+        
         <Route path="invoices" element={<Invoices />}>
           <Route
             index
@@ -53,7 +69,7 @@ function RoutePublic() {
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
       </Route>
-      <Route index path="home" element={<Home />} />
+    
     </Routes>
   );
 }
