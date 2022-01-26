@@ -11,8 +11,8 @@ function Help() {
         <div>
           <input type="search" placeholder="En que podemos ayudarle?" />
         </div>
-        <div class="conteiner aligner aligner--spaceAround row">
-          <div class="flex-grow column">
+        <div className="conteiner aligner aligner--spaceAround row">
+          <div className="flex-grow column">
             <h3>Administracion Cuenta</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
@@ -21,7 +21,7 @@ function Help() {
               aliquam voluptates porro repellendus!
             </p>
           </div>
-          <div class="flex-grow column">
+          <div className="flex-grow column">
             <h3>Udla Verso</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -30,7 +30,7 @@ function Help() {
               quasi corporis facilis optio?
             </p>
           </div>
-          <div class="flex-grow column">
+          <div className="flex-grow column">
             <h3>Visor Meta Verso</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum

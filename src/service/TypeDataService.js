@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://udlaverso.herokuapp.com/typedata";
+const baseUrl = process.env.REACT_APP_API_URL + "/typedata";
 
 let token = null;
 

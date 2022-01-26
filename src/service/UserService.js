@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const baseUrl = process.env.REACT_APP_API_URL;
-const baseUrlUser = "https://udlaverso.herokuapp.com/users";
-
+const baseUrlUser = process.env.REACT_APP_API_URL + "/users";
+console.log(baseUrlUser, "env3");
 let token = null;
 
 const setToken = (newToken) => {

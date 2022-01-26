@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://udlaverso.herokuapp.com/products";
+const baseUrl = process.env.REACT_APP_API_URL + "/products";
 let token = null;
 
 export const setToken = (newToken) => {

@@ -5,12 +5,12 @@ function InvestigationGroups() {
     <div className="container m-medium border">
       <h3 className="text-big">INVESTIGATION GROUPS</h3>
       <div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
+        <div className="flip-card">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
               <img src={iconGuitua} />
             </div>
-            <div class="flip-card-back">
+            <div className="flip-card-back">
               <h1>GITUA</h1>
               <h4>Líneas de investigación declaradas por el grupo</h4>
               <p>Formación para la gestión de sistemas ambientales</p>
@@ -22,23 +22,23 @@ function InvestigationGroups() {
         </div>
       </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
             <img src="favicon.ico" />
           </div>
-          <div class="flip-card-back">
+          <div className="flip-card-back">
             <h1>Sena</h1>
           </div>
         </div>
       </div>
 
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
+      <div className="flip-card">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
             <img src="favicon.ico" />
           </div>
-          <div class="flip-card-back">
+          <div className="flip-card-back">
             <h1>AMBIENTES VIRTUALES</h1>
           </div>
         </div>

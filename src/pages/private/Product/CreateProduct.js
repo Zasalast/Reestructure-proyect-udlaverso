@@ -85,7 +85,7 @@ function CreateProduct() {
         <h1 className="text-center text-uppercase text-success text-big aligner aligner--centerHoritzontal aligner--centerVertical">
           login
         </h1>
-        <div class="input input-fullWidth">
+        <div className="input input-fullWidth">
           <input
             type="text"
             name="Name"
@@ -94,7 +94,7 @@ function CreateProduct() {
             onChange={({ target }) => setName(target.value)}
           />
         </div>
-        <div class="input input-fullWidth">
+        <div className="input input-fullWidth">
           <input
             type="text"
             name="Description"
@@ -103,7 +103,7 @@ function CreateProduct() {
             onChange={({ target }) => setDescription(target.value)}
           />
         </div>
-        <div class="input input-fullWidth">
+        <div className="input input-fullWidth">
           <input
             type="text"
             name="Name"
@@ -112,7 +112,7 @@ function CreateProduct() {
             onChange={({ target }) => setUrl(target.value)}
           />
         </div>
-        <div class="input input-fullWidth">
+        <div className="input input-fullWidth">
           <input
             type="text"
             name="UrlImagen"

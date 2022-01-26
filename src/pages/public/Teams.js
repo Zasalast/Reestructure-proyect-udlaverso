@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getAll } from "../../service/PersonsService";
-import { getInvoices } from "../../data";
+import { NavLink, Outlet, useSearchParams } from "react-router-dom";
+/* import { getInvoices } from "../../data"; */
 import api from "../../service/api2";
 import data from "./../../Data.json";
 const Teams = () => {
@@ -9,62 +10,88 @@ const Teams = () => {
     error: null,
     data: undefined,
   });
-
+  let [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => {
-    this.fetchData();
+    fetchData();
   }, []);
 
   const fetchData = async () => {
+    let data = null;
     setState({ loading: true, error: null });
     try {
-      const data = await api.teams.list;
-      this.setState({ loading: false, data: data });
+      console.log(api, "api");
+      data = await getAll(); /* api.users.list; */
+      setState({
+        ...state,
+        data: data,
+      });
+      console.log(data, "data");
+      console.log(state, "state data");
+      setState({ loading: false, data: data });
     } catch (error) {
-      this.setState({ loading: false, error: error });
+      setState({ loading: false, error: error });
     }
   };
 
-  const { id, userId, description, fistName, job } = data;
-  if (this.State.loading === true) {
-    return "Loading...";
+  /*  const { id, userId, description, fistName, job } = data; */
+
+  if (state.loading === true) {
+    return <div className="loadingBar"></div>;
   }
-  if (this.state.error) {
-    return `Error: ${this.State.error.message}`;
+  if (state.error) {
+    return `Error: ${state.error.message}`;
   }
 
   return (
     <div className="container m-medium border">
       <h2>Team</h2>;{" "}
-      <a href="https://sites.google.com/view/redes3d/qui%C3%A9nes-somos">
-        {/* <div>{data.team}</div> */}
-        <div class="card flip-card">
-          <div className="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="img.jpg" alt="John" style="width:100%" />
+      <label className="label" for="test10">
+        Buscar por nombre
+      </label>
+      <div className="input input-fullWidth">
+        {" "}
+        <input
+          id="test10"
+          placeholder="Buscar por nombre"
+          value={searchParams.get("filter") || ""}
+          onChange={(event) => {
+            let filter = event.target.value;
+            if (filter) {
+              setSearchParams({ filter });
+            } else {
+              setSearchParams({});
+            }
+          }}
+        />
+      </div>
+      <div>
+        {state.data
+          .filter((data) => {
+            let filter = searchParams.get("filter");
+            if (!filter) return true;
+            let name = data.name.toLowerCase();
+            return name.startsWith(filter.toLowerCase());
+          })
+          .map((item) => (
+            <div key={item.id} className="card flip-card">
+              <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  {/* <img src="img.jpg" alt="John" style="width:100%" /> */}
+                </div>
+                <div className="flip-card-back">
+                  <h1>{item.name}</h1>
+
+                  <p className="title">{item.lastName}</p>
+                  <p>{item.phone} </p>
+
+                  <p>
+                    <button>Contact</button>
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="flip-card-back">
-              <h1>John Doe</h1>
-              <p class="title">CEO & Founder, Example</p>
-              <p>Harvard University</p>
-              <a href="#">
-                <i class="fa fa-dribbble"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-twitter"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-linkedin"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-facebook"></i>
-              </a>
-              <p>
-                <button>Contact</button>
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
+          ))}
+      </div>
     </div>
   );
 };

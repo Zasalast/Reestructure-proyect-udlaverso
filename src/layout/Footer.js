@@ -36,6 +36,18 @@ const Footers = () => {
                 <a className="grey-text text-lighten-3" href="#!">
                   Contactanos
                 </a>
+                <a href="#">
+                  <i className="fa fa-dribbble"></i>
+                </a>
+                <a href="#">
+                  <i className="fa fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i className="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i className="fa fa-facebook"></i>
+                </a>
               </li>
             </ul>
           </div>

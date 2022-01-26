@@ -11,7 +11,7 @@ function WhatDoWeDo() {
         <div>
           <h3 className="text-big">CONVOCATORIAS</h3>
           <ul>
-            <li class="badge">
+            <li className="badge">
               <p>
                 <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.uniamazonia.edu.co%2Finicio%2Findex.php%2Finvestigacion%2Fconvocatorias%2F6929-convocatoria-proyectos-en-el-marco-de-semilleros-y-grupos-de-investigacion-2020.html&sa=D&sntz=1&usg=AFQjCNGo6DoBt0h-yVv2JdECuskC2JErlA">
                   2020 - Universidad de la Amazonia: Convocatoria Proyectos en
@@ -25,7 +25,7 @@ function WhatDoWeDo() {
                 informáticas.{" "}
               </p>
             </li>
-            <li class="badge  ">
+            <li className="badge  ">
               <p>
                 <a href="https://sites.google.com/view/redes3d/qu%C3%A9-hacemos#h.wmudeqqkp97e">
                   2019 - Universidad de la Amazonia: Convocatoria de Semilleros
@@ -45,7 +45,7 @@ function WhatDoWeDo() {
             EVENTOS DE DIVULGACIÓN CIENTIFICA
           </h3>
           <ul>
-            <li class="badge">
+            <li className="badge">
               <p>
                 <a href="https://sites.google.com/view/redes3d/qu%C3%A9-hacemos#h.cpqq59eybyoc">
                   1er Seminario Internacional de Fauna y Flora 2020
@@ -57,7 +57,7 @@ function WhatDoWeDo() {
                 EL APRENDIZAJE DE OSTEOLOGÍA DE FAUNA SILVESTRE.
               </p>
             </li>
-            <li class="badge  ">
+            <li className="badge  ">
               <p>
                 <a href="https://sites.google.com/view/redes3d/qu%C3%A9-hacemos#h.nrql2pyzel47">
                   2do Congreso Internacional TIC para la Amazonia 2019
@@ -77,7 +77,7 @@ function WhatDoWeDo() {
             Otros Eventos
           </h3>
           <ul>
-            <li class="badge">
+            <li className="badge">
               <p>
                 <a href="https://sites.google.com/view/redes3d/qu%C3%A9-hacemos/campus-party-colombia-2019">
                   Campus Party Colombia 2019

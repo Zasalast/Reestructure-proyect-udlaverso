@@ -108,10 +108,10 @@ function Home() {
       <div className="c4"></div>
       <div className="c5">
         <ul>
-          <li class="nowrap">Users in World: 1</li>
-          <li class="nowrap">Regions: 2</li>
-          <li class="nowrap">Total Users: 44</li>
-          <li class="nowrap">Active Users (Last 30 Days): 21</li>
+          <li className="nowrap">Users in World: 1</li>
+          <li className="nowrap">Regions: 2</li>
+          <li className="nowrap">Total Users: 44</li>
+          <li className="nowrap">Active Users (Last 30 Days): 21</li>
         </ul>
       </div>
       <div className="c5">
