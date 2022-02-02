@@ -2,9 +2,12 @@ import React from "react";
 import "./Header.scss";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import logo from "./../assets/Aventuras en equipo .png";
-import { AuthStatus } from "../components/Auth/Auth";
+import { useSelector } from "react-redux";
+/* import { AuthStatus, Auth } from "../components/Auth/Auth"; */
 
 function Headers({ children }) {
+  const { authentication } = useSelector((state) => state.auth);
+  console.log(authentication);
   let navigate = useNavigate();
   let params = useParams();
   function handleChange(value) {
@@ -12,8 +15,11 @@ function Headers({ children }) {
     value = "";
   }
   const handleLogout = () => {
-    /* setUser(null); */
-    /* noteService.setToken(null) */
+    /* setUser(null);  /*   const handleLogout = () => {
+    noteService.setToken(null)
+    window.localStorage.removeItem("loggedNoteAppUser");
+  }; */
+
     window.localStorage.removeItem("loggedNoteAppUser");
   };
   return (
@@ -134,12 +140,21 @@ function Headers({ children }) {
             </Link>{" "}
             {/* <div className="header-item tabs-item  ">{children}</div> */}{" "}
             <div className="header-item tabs-item aligner--centerVertical  aligner--contentEnd logout-text text-white">
-              <button
-                onClick={() => handleLogout}
-                className="text-white button button--transparent    header-logout"
-              >
-                logout
-              </button>
+              {authentication ? (
+                <button
+                  onClick={() => handleLogout}
+                  className="text-white button button--transparent    header-logout"
+                >
+                  logout
+                </button>
+              ) : (
+                <Link
+                  to="/login"
+                  className="header-item tabs-item button button--transparent header-logout"
+                >
+                  login
+                </Link>
+              )}
 
               {/*    <AuthStatus /> */}
             </div>

@@ -1,5 +1,6 @@
 import * as React from "react";
-import { AuthProvider } from "./../components/Auth/Auth";
+import { useSelector } from "react-redux";
+/* import { AuthProvider, RequireAuth } from "./../components/Auth/Auth"; */
 
 import { RoutePrivate } from "./RoutePrivate";
 import { RoutePublic } from "./RoutePublic";
@@ -8,11 +9,13 @@ function RoutesApp() {
     noteService.setToken(null)
     window.localStorage.removeItem("loggedNoteAppUser");
   }; */
+  const { authentication } = useSelector((state) => state.auth);
   return (
-    <AuthProvider>
-      <RoutePrivate />
-      <RoutePublic />
-    </AuthProvider>
+    <div>
+      {authentication && <RoutePrivate />}
+
+      {!authentication && <RoutePublic />}
+    </div>
   );
 }
 export default RoutesApp;

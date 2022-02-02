@@ -1,62 +1,62 @@
-import React from 'react';
-import {  useNavigate, useLocation, Navigate } from "react-router-dom";
-const fakeAuthProvider = {
-    isAuthenticated: false,
-    signin(callback) {
-        fakeAuthProvider.isAuthenticated = true;
-        setTimeout(callback, 100); // fake async
-    },
-    signout(callback) {
-        fakeAuthProvider.isAuthenticated = false;
-        setTimeout(callback, 100);
-    }
+import React from "react";
+import { Login } from "./Login/Login";
+import { Signup } from "./Signup/Signup";
+/* import { Row, Col, Button } from "antd"; */
+/* import { Layout } from "antd"; */
+import { useTranslation } from "react-i18next";
+
+export const Auth = () => {
+  /*  const { Header, Content } = Layout; */
+
+  const { i18n } = useTranslation();
+
+  const Selectlanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
+  return (
+    <div style={{ padding: "24px" }}>
+      <div>
+        <header style={{ background: "#fff" }}>
+          <div>
+            <col className="col-sm-9" style={{ textAlign: "center" }}>
+              Celagem
+            </col>
+            <col className="col-sm-4">
+              <button
+                onClick={() => Selectlanguage("es")}
+                type="link"
+                icon="flag"
+              >
+                ESP
+              </button>
+            </col>
+            <col className="col-sm-4">
+              <button
+                onClick={() => Selectlanguage("en")}
+                type="link"
+                icon="flag"
+              >
+                ENG
+              </button>
+            </col>
+          </div>
+        </header>
+      </div>
+
+      <div style={{ paddingTop: "24px" }}>
+        <content>
+          Row
+          <row className="row">
+            <col className="col-sm-6">
+              <Signup />
+            </col>
+            <col className="col-sm-6">
+              <Login />
+            </col>
+          </row>
+        </content>
+      </div>
+    </div>
+  );
 };
-let AuthContext = React.createContext(null);
-function AuthProvider({ children }) {
-    let [user, setUser] = React.useState(null);
-    let signin = (newUser, callback) => {
-        return fakeAuthProvider.signin(() => {
-            setUser(newUser);
-            callback();
-        });
-    };
-    let signout = (callback) => {
-        return fakeAuthProvider.signout(() => {
-            setUser(null);
-            callback();
-        });
-    };
-    let value = { user, signin, signout };
-    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-function useAuth() {
-    return React.useContext(AuthContext);
-}
-function AuthStatus() {
-    let auth = useAuth();
-    let navigate = useNavigate();
-    if (!auth.user) {
-        return <> ''</>;
-    }
-    return (<>
-       {auth.user}{""}
-      <button onClick={() => {
-            auth.signout(() => navigate("/home"));
-        }}>
-        Sign out  
-      </button>
-    </>);
-}
-function RequireAuth({ children }) {
-    let auth = useAuth();
-    let location = useLocation();
-    if (!auth.user) {
-        // Redirect them to the /login page, but save the current location they were
-        // trying to go to when they were redirected. This allows us to send them
-        // along to that page after they login, which is a nicer user experience
-        // than dropping them off on the home page.
-        return <Navigate to="/login" state={{ from: location }} replace/>;
-    }
-    return children;
-}
-export {RequireAuth,AuthStatus,useAuth,AuthProvider,fakeAuthProvider}

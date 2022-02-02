@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";  
+import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 /* import { getInvoices } from "../../data"; */
 import { getAll } from "../../service/PersonsService";
@@ -18,7 +18,6 @@ function Persons() {
     let data = null;
     setState({ loading: true, error: null });
     try {
-   
       data = await getAll(); /* api.users.list; */
       setState({
         ...state,
@@ -46,14 +45,10 @@ function Persons() {
       {state.data ? (
         <div>
           {" "}
-          <h2>Team</h2>{" "}
-          <label className="label" for="test10">
-            Buscar por nombre
-          </label>
+          <h2>Team</h2> <label className="label">Buscar por nombre</label>
           <div className="input input-fullWidth">
             {" "}
             <input
-              id="test10"
               placeholder="Buscar por nombre"
               value={searchParams.get("filter") || ""}
               onChange={(event) => {
@@ -67,57 +62,32 @@ function Persons() {
             />
           </div>
           <div>
-          
-                {state.data
-                  .filter((data) => {
-                    let filter = searchParams.get("filter");
-                    if (!filter) return true;
-                    let name = data.name.toLowerCase();
-                    return name.startsWith(filter.toLowerCase());
-                  })
-                  .map((item) => (
-                     
-                      <li key={item.id}>
-              {" "}
-              <NavLink
-                style={({ isActive }) => ({
-                  display: "block",
-                  margin: "1rem 0",
-                  color: isActive ? "red" : "",
-                })}
-                to={`/persons/${item.id}`}
-                key={item.id}
-              >
-                {item.name}
-                {item.lastName}
-                {item.phone}
-              </NavLink>
-          
-                      
-                     
-                  
-
-                     
-             
-                      
-                        </li> 
-                  ))}
-          
+            {state.data
+              .filter((data) => {
+                let filter = searchParams.get("filter");
+                if (!filter) return true;
+                let name = data.name.toLowerCase();
+                return name.startsWith(filter.toLowerCase());
+              })
+              .map((item) => (
+                <NavLink to={`/persons/${item.id}`} key={item.id}>
+                  {item.name}
+                  {item.id}
+                  {item.lastName}
+                  {item.phone}
+                </NavLink>
+              ))}
           </div>
         </div>
       ) : (
         <>
           {" "}
-          <div class="loadingBar"></div> <Loading />
+          <div className="loadingBar"></div> <Loading />
         </>
       )}
-        <Outlet />
+      <Outlet />
     </div>
   );
-};
-        
-    
-    
- 
+}
 
 export { Persons };

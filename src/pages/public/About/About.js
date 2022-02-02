@@ -11,7 +11,7 @@ const About = () => {
     <div className="container m-medium border">
       {" "}
       <div>
-        <img class="opacity-low" src={MisionVision} width="100%" />
+        <img className="opacity-low" src={MisionVision} width="100%" />
         <h2 className="text-huge">¿Quiénes Somos?</h2>
       </div>
       <p>

@@ -46,9 +46,9 @@ function CreatePerson() {
     try {
       const user = await createPersonService({
         ...person,
-        name,
-        lastName,
-        phone,
+        name: person.name,
+        lastName: person.lastName,
+        phone: person.phone,
       });
       console.log(user);
       /*   window.localStorage.setItem(
@@ -60,8 +60,7 @@ function CreatePerson() {
 
       setAccessToken(access_token);
 
-      setEmail("");
-      setPassword("");
+      setPerson({ name: "", lastName: "", phone: "" });
     } catch (error) {
       console.log(error);
     }

@@ -2,11 +2,11 @@ import React from "react";
 
 function Loading() {
   return (
-    <div class="loadingSpinner">
-      <span class="loadingSpinner-inner"></span>
-      <span class="loadingSpinner-inner"></span>
-      <span class="loadingSpinner-inner"></span>
-      <span class="loadingSpinner-inner"></span>
+    <div className="loadingSpinner">
+      <span className="loadingSpinner-inner"></span>
+      <span className="loadingSpinner-inner"></span>
+      <span className="loadingSpinner-inner"></span>
+      <span className="loadingSpinner-inner"></span>
     </div>
   );
 }

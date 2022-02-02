@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useNavigate, useLocation } from "react-router-dom";
 
-import { useAuth } from "./../../../components/Auth/Auth";
+/* import { useAuth } from "./../../../components/Auth/Auth"; */
 import { setToken, CreateUserService } from "../../../service/UserService";
 function CreateUser() {
   const [email, setEmail] = useState("");
@@ -17,16 +17,16 @@ function CreateUser() {
 
   let navigate = useNavigate();
   let location = useLocation();
-  let auth = useAuth();
+  /* let auth = useAuth(); */
   let from = location.state?.from?.pathname || "/";
-  function handleSubmit(event) {
+  /*  function handleSubmit(event) {
     event.preventDefault();
     let formData = new FormData(event.currentTarget);
     let username = formData.get("username");
     auth.signin(username, () => {
       navigate(from, { replace: true });
     });
-  }
+  } */
   const handleCreateUser = async (event) => {
     event.preventDefault();
     console.log(event.target.value, "hola");
@@ -68,7 +68,7 @@ function CreateUser() {
         <h1 className="text-center text-uppercase text-success text-big aligner aligner--centerHoritzontal aligner--centerVertical">
           login
         </h1>
-        <div class="input input-fullWidth">
+        <div className="input input-fullWidth">
           <input
             type="email"
             name="Email"
@@ -77,7 +77,7 @@ function CreateUser() {
             onChange={({ target }) => setEmail(target.value)}
           />
         </div>
-        <div class="input input-fullWidth">
+        <div className="input input-fullWidth">
           <input
             id="test10"
             type="password"

@@ -10,7 +10,7 @@ import {
   Outlet,
 } from "react-router-dom";
 
-import { useAuth } from "./../../../components/Auth/Auth";
+/* import { useAuth } from "./../../../components/Auth/Auth"; */
 import {
   CreateProductService,
   setToken,
@@ -31,16 +31,16 @@ function CreateProduct() {
 
   let navigate = useNavigate();
   let location = useLocation();
-  let auth = useAuth();
+  /* let auth = useAuth(); */
   let from = location.state?.from?.pathname || "/";
-  function handleSubmit(event) {
+  /*   function handleSubmit(event) {
     event.preventDefault();
     let formData = new FormData(event.currentTarget);
     let username = formData.get("username");
     auth.signin(username, () => {
       navigate(from, { replace: true });
     });
-  }
+  } */
   const handleLogin = async (event) => {
     event.preventDefault();
     console.log(event.target.value, "hola");

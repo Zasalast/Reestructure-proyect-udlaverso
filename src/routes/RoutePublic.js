@@ -22,6 +22,7 @@ import { WorkWithUs } from "../pages/public/WorkWithUs/WorkWithUs";
 import WhatDoWeDo from "../pages/public/WhatDoWeDo/WhatDoWeDo";
 import Person from "../pages/public/Person";
 import { Persons } from "../pages/public/Persons";
+import { Login } from "../components/Auth/Login/Login";
 
 function RoutePublic() {
   return (
@@ -29,12 +30,13 @@ function RoutePublic() {
       {/*routes public*/}
       <Route path="/" element={<Layout />}>
         <Route path="about" element={<About />} />
-        <Route path="login" element={<LoginPage />} />
+        <Route path="logins" element={<LoginPage />} />
+        <Route path="login" element={<Login />} />
         <Route path="expenses" element={<Expenses />} />
         <Route path="objetive" element={<Objetivos />} />
         <Route path="metodologia" element={<Metodologia />} />
         <Route path="misionvision" element={<MisionVision />} />
-        <Route path="teams" element={<Teams />} />
+        {/* <Route path="teams" element={<Teams />} /> */}
         <Route path="services" element={<ServicesOffered />} />
         <Route path="help" element={<Help />} />
         <Route path="videowordbuilder" element={<VideoWordBuilder />} />
@@ -46,17 +48,17 @@ function RoutePublic() {
         <Route index path="home" element={<Home />} />
 
         <Route path="persons" element={<Persons />}>
-          <Route
+          {/*   <Route
             index
             element={
               <main style={{ padding: "1rem" }}>
                 <p>Select an person</p>
               </main>
             }
-          />
-          <Route path=":personId" element={<Person />} />
+          /> */}
+          <Route path=":personsId" element={<Person />} />
         </Route>
-        
+
         <Route path="invoices" element={<Invoices />}>
           <Route
             index
@@ -69,7 +71,6 @@ function RoutePublic() {
           <Route path=":invoiceId" element={<Invoice />} />
         </Route>
       </Route>
-    
     </Routes>
   );
 }

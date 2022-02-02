@@ -1,9 +1,9 @@
 const jwtDecode = require("jwt-decode");
 
-class _Token {
-  decode = (token) => jwtDecode(token || this.getToken());
+const Token = () => {
+  const decode = (token) => jwtDecode(token || this.getToken());
 
-  isTokenValid = () => {
+  const isTokenValid = () => {
     try {
       return jwtDecode(this.getToken()) !== undefined;
     } catch (e) {
@@ -11,14 +11,13 @@ class _Token {
     }
   };
 
-  getToken() {
+  const getToken = () => {
     return localStorage.getItem("token") || sessionStorage.getItem("token");
-  }
+  };
 
-  setToken(type, token) {
-    if (type === "local") return localStorage.setItem("token", token);
+  const setToken = (type, token) => {
+    if (type == "local") return localStorage.setItem("token", token);
     return sessionStorage.setItem("token", token);
-  }
-}
-
-export const Token = new _Token();
+  };
+};
+export { Token };

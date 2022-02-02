@@ -1,9 +1,9 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { getAll,getOnePersonService } from "../../service/PersonsService";
+import { getAll, getOnePersonService } from "../../service/PersonsService";
 import { Loading } from "../../components/Loading/Loading";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
-export default  async function Person() {
+export default async function Person() {
   const [state, setState] = useState({
     loading: true,
     error: null,
@@ -14,13 +14,14 @@ export default  async function Person() {
 
   useEffect(() => {
     fetchData();
-  }, []); 
+  }, []);
   const fetchData = async () => {
     let data = null;
-    setState({...state, loading: true, error: null });
+    setState({ ...state, loading: true, error: null });
     try {
-       data = await getOnePersonService(params.personId);
-       /* api.users.list; */
+      data = await getOnePersonService(params.personId);
+      console.log(data, "getOnePersonService(params.personId)");
+      /* api.users.list; */
       setState({
         ...state,
         data: data,
@@ -29,10 +30,9 @@ export default  async function Person() {
       console.log(state, "state data");
       setState({ loading: false, data: data });
     } catch (error) {
-      setState({...state, loading: false, error: error });
+      setState({ ...state, loading: false, error: error });
     }
   };
-
 
   if (state.loading === true) {
     return <div className="loadingBar"></div>;
@@ -41,14 +41,14 @@ export default  async function Person() {
     return `Error: ${state.error.message}`;
   }
   return (
-    <main style={{ padding: "1rem" }} className="container m-medium border">
-  {/*     {console.log(state.data)} */}
-    {/*   <h2>Name: {person.name}</h2>
+    <main className="container m-medium border">
+      {console.log(state.data)}
+      {/*   <h2>Name: {person.name}</h2>
       <p>
         LastName: {person.lastName}
       </p>
       <p>Phone: {person.phone}</p> */}
-    {/*   <p>
+      {/*   <p>
         <button
           onClick={() => {
             deletePersonService(person.number);

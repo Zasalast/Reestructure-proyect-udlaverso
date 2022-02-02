@@ -18,7 +18,7 @@ const Teams = () => {
 
   const fetchData = async () => {
     let data = null;
-    setState({...state, loading: true, error: null });
+    setState({ ...state, loading: true, error: null });
     try {
       console.log(api, "api");
       data = await getAll(); /* api.users.list; */
@@ -28,9 +28,9 @@ const Teams = () => {
       });
       console.log(data, "data");
       console.log(state, "state data");
-      setState({...state, loading: false, data: data });
+      setState({ ...state, loading: false, data: data });
     } catch (error) {
-      setState({...state, loading: false, error: error });
+      setState({ ...state, loading: false, error: error });
     }
   };
 
@@ -48,14 +48,10 @@ const Teams = () => {
       {state.data ? (
         <div>
           {" "}
-          <h2>Team</h2>{" "}
-          <label className="label" for="test10">
-            Buscar por nombre
-          </label>
+          <h2>Team</h2> <label className="label">Buscar por nombre</label>
           <div className="input input-fullWidth">
             {" "}
             <input
-              id="test10"
               placeholder="Buscar por nombre"
               value={searchParams.get("filter") || ""}
               onChange={(event) => {
@@ -69,9 +65,9 @@ const Teams = () => {
             />
           </div>
           <div>
-            <table class="table">
+            <table className="table">
               <thead>
-                <tr class="text-small text-left">
+                <tr className="text-small text-left">
                   <th>Fotografia</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
@@ -108,7 +104,7 @@ const Teams = () => {
       ) : (
         <>
           {" "}
-          <div class="loadingBar"></div> <Loading />
+          <div className="loadingBar"></div> <Loading />
         </>
       )}
     </div>
