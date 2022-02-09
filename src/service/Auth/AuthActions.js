@@ -9,5 +9,9 @@ export const { auth } = createActions({
     SIGNUP_RESPONSE: () => ({}),
 
     LOGOUT: () => ({}),
+    LOGOUT_RESPONSE: (token) => ({ token }),
+
+    LOADING: () => ({}),
+    LOADING_RESPONSE: (token) => ({ token }),
   },
 });

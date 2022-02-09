@@ -42,9 +42,9 @@ function* login({ payload }) {
   }
 }
 
-/* function* signup({ payload }) {
+function* signup({ payload }) {
   const { data } = payload;
-  const response = yield Api.post("/auth/signup", data);
+  const response = yield postApi("/users", data);
   if (response.ok) {
     console.log(response);
     yield put(auth.signupResponse(response.ok));
@@ -52,13 +52,29 @@ function* login({ payload }) {
     const err = new TypeError("ERROR_LOGIN");
     yield put(auth.signupResponse(err));
   }
-} */
+}
 function* logout() {
+  console.log("auth.logout() remove auth saga");
   localStorage.removeItem("token");
+  yield put(auth.logout());
+  console.log("auth.logout() auth saga");
+  yield put(auth.logoutResponse(null));
+  console.log("auth.logoutresponse() auth saga");
+}
+
+function* loading() {
+  console.log("loading auth saga");
+  let dataloading = localStorage.getItem("token");
+  console.log(dataloading, "loading auth saga");
+  if (!dataloading) {
+    yield put(auth.loginResponse(dataloading));
+  }
+  console.log("loading auth saga");
 }
 
 function* ActionWatcher() {
   yield takeLatest(auth.login, login);
+  yield takeLatest(auth.loading, loading);
   // yield takeLatest(auth.signup, signup)
   yield takeLatest(auth.logout, logout);
 }

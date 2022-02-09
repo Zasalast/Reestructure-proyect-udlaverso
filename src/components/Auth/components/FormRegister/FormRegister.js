@@ -1,56 +1,50 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import * as moment from "moment";
 import { useTranslation } from "react-i18next";
 
 const FormRegister = ({ form }) => {
   const { t } = useTranslation();
-  const {
-    getFieldDecorator,
-    validateFields,
-    getFieldValue,
-    validateFieldsAndScroll,
-  } = form;
+
   //const { Option } = Select;
   const currentDate = moment();
 
   const validateToNextPassword = (rule, value, callback) => {
     if (value /*&& this.state.confirmDirty*/) {
-      validateFields(["confirm"], { force: true });
+      /*     validateFields(["confirm"], { force: true }); */
     }
     callback();
   };
 
   const compareToFirstPassword = (rule, value, callback) => {
-    if (value && value !== getFieldValue("password")) {
+    /*  if (value && value !== getFieldValue("password")) {
       callback(t("inconsistent_password"));
     } else {
       callback();
-    }
+    } */
   };
 
   const validateTerms = (rule, value, callback) => {
-    if (!value) {
+    /*   if (!value) {
       callback(t("accept_privacy"));
     } else {
       callback();
-    }
+    } */
   };
 
   const validateLength = (rule, value, callback) => {
-    if (value && value.length < 3) {
+    /*   if (value && value.length < 3) {
       callback(t("minimum"));
     }
     if (value && value.length > 60) {
       callback(t("maximum"));
     } else {
       callback();
-    }
+    } */
   };
 
   const validateTime = (rule, value, callback) => {
-    if (value) {
+    /*   if (value) {
       const value_format = value.format("DD/MM/YYYY");
       const date_user = moment(value_format, "DD/MM/YYYY");
       if (currentDate.diff(date_user, "years") <= 18) {
@@ -60,18 +54,18 @@ const FormRegister = ({ form }) => {
       }
     } else {
       callback();
-    }
+    } */
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    /*    e.preventDefault();
     validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log("Received values of form: ", values);
       } else {
         console.log("error", err);
       }
-    });
+    }); */
   };
 
   const handleConfirmBlur = () => {
@@ -85,67 +79,57 @@ const FormRegister = ({ form }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="container">
       {/*Nombre, Apellido*/}
       <div className="row">
-        <col className="col-sm-6">
-          <div label={t("name_first")} hasFeedback>
-            {getFieldDecorator("nickname", {
-              rules: [
-                {
-                  required: true,
-                  message: `${t("pleace")}s ${t("name_first")}`,
-                  whitespace: true,
-                },
-                {
-                  validator: validateLength,
-                },
-              ],
-            })(
-              <input
-                id="test10"
-                placeholder={`${t("pleace")}s ${t("name_first")}`}
-                type="text"
-              />
-            )}
-          </div>
-        </col>
-        <col className="col-sm-6">
-          <div label={t("name_last")}>
-            <input
-              id="test10"
-              placeholder={`${t("pleace")}s ${t("name_last")}`}
-              type="text"
-            />
-          </div>
-        </col>
+        <div className="container ">
+          <label label={t("name_first")} hasFeedback className="text-huge">
+            {t("name_first")}
+          </label>
+          <input
+            id="test10"
+            placeholder={`${t("pleace")}s ${t("name_first")}`}
+            type="text"
+            required={true}
+            className="input input-fullWidth"
+          />
+        </div>
+        <div className="container ">
+          <label label={t("name_last")}>{t("name_last")}</label>{" "}
+          <input
+            id="test10"
+            placeholder={`${t("pleace")}s ${t("name_last")}`}
+            type="text"
+            className="input input-fullWidth"
+          />
+        </div>
       </div>
 
       {/*correo, telefono*/}
-      <div className="row">
-        <col className="col-sm-6">
-          <div label={t("mail")}>
-            <input
-              id="test10"
-              placeholder={`${t("pleace")} ${t("mail")}`}
-              type="text"
-            />
-          </div>
-        </col>
-        <col className="col-sm-6">
-          <div label={t("phone")}>
-            <input
-              id="test10"
-              placeholder={`${t("pleace")} ${t("phone")}`}
-              type="text"
-            />
-          </div>
-        </col>
+      <div className="container ">
+        <div className="container ">
+          <label label={t("mail")}>{t("mail")}</label>
+          <input
+            id="test10"
+            placeholder={`${t("pleace")} ${t("mail")}`}
+            type="text"
+            className="input input-fullWidth"
+          />
+        </div>
+        <div className="container ">
+          <label label={t("phone")}>{t("phone")}</label>{" "}
+          <input
+            id="phone"
+            placeholder={`${t("pleace")} ${t("phone")}`}
+            type="text"
+            className="input input-fullWidth"
+          />
+        </div>
       </div>
 
       {/*edad, sexo, estadoc ivil*/}
       <div className="row">
-        <col className="col-sm-6">
+        <div className="container ">
           <div label={t("sex")}>
             <label className="label" for="country-code">
               {`${t("pleace_select")} ${t("sex")}`}
@@ -155,27 +139,33 @@ const FormRegister = ({ form }) => {
               <option value="M">M</option>
             </select>
           </div>
-        </col>
-        <col className="col-sm-6">
+        </div>
+        <div className="container ">
           <div label={t("status_marital")}>
             {`${t("pleace_select")} ${t("status_marital")}`}
-            <select onChange={handleChange}>
+            <select onChange={handleChange} className="select select-fullWidth">
               <option value="single">{t("single")}</option>
               <option value="married">{t("married")}</option>
             </select>
           </div>
-        </col>
+        </div>
       </div>
 
       {/*fecha de nacimiento, lugar de nacimiento*/}
       <div className="row">
-        <col className="col-sm-4">
+        <div className="radio col-sm-4">
           <div label={t("birthdate")}>
             {`${t("pleace_select")} ${t("birthdate")}`}{" "}
-            <input id="radio1" name="radio" type="date" value="" />
+            <input
+              id="radio1"
+              name="radio"
+              type="date"
+              value=""
+              className="input input-fullWidth"
+            />
           </div>
-        </col>
-        <col className="col-sm-10">
+        </div>
+        <div className="col-sm-10">
           <div label={t("place_birth")}>
             <input
               id="radio1"
@@ -185,12 +175,12 @@ const FormRegister = ({ form }) => {
               placeholder={`${t("pleace")} ${t("place_birth")}`}
             />
           </div>
-        </col>
+        </div>
       </div>
 
       {/*pasaporte, numero de pasaporte*/}
       <div className="row">
-        <col className="col-sm-5">
+        <div className="col-sm-5">
           <div label={t("passport")}>
             <input
               id="radio1"
@@ -200,8 +190,8 @@ const FormRegister = ({ form }) => {
               placeholder={`${t("pleace")} ${t("passport")}`}
             />
           </div>
-        </col>
-        <col className="col-sm-9">
+        </div>
+        <div className="col-sm-9">
           <div label={t("passport_number")}>
             <input
               id="radio1"
@@ -211,39 +201,37 @@ const FormRegister = ({ form }) => {
               placeholder={`${t("pleace")} ${t("passport_number")}`}
             />
           </div>
-        </col>
+        </div>
       </div>
 
       {/*contrasena/ confirmacion*/}
-      <div className="row">
-        <col className="col-sm-6">
-          <div label={t("password")}>
-            <input
-              id="radio1"
-              name="radio"
-              type="password"
-              value=""
-              placeholder={`${t("pleace")} ${t("password")}`}
-            />
-          </div>
-        </col>
-        <col className="col-sm-6">
-          <div label={t("confirm_password")}>
-            <input
-              id="radio1"
-              name="radio"
-              type="password"
-              value=""
-              onBlur={handleConfirmBlur}
-              placeholder={`${t("pleace_confirm")} ${t("confirm_password")}`}
-            />
-          </div>
-        </col>
+      <div className="container ">
+        <div className="container ">
+          <div label={t("password")}>{t("password")}</div>{" "}
+          <input
+            id="radio1"
+            name="radio"
+            type="password"
+            value=""
+            placeholder={`${t("pleace")} ${t("password")}`}
+          />
+        </div>
+        <div className="container ">
+          <div label={t("confirm_password")}>{t("confirm_password")}</div>
+          <input
+            id="radio1"
+            name="radio"
+            type="password"
+            value=""
+            onBlur={handleConfirmBlur}
+            placeholder={`${t("pleace_confirm")} ${t("confirm_password")}`}
+          />
+        </div>
       </div>
 
       {/*politicas*/}
       <div className="row">
-        <col className="col-sm-12">
+        <div className="container ">
           <div>
             <input
               id="one"
@@ -253,16 +241,16 @@ const FormRegister = ({ form }) => {
               placeholder={t("terms")}
             />
           </div>
-        </col>
+        </div>
       </div>
 
       {/*subtmit*/}
-      <div className="row" type="flex" justify="end">
-        <col className="col-sm-4">
+      <div className="container  " type="flex" justify="end">
+        <div className="container-medium">
           <div>
             <button>{t("register")}</button>
           </div>
-        </col>
+        </div>
       </div>
     </form>
   );

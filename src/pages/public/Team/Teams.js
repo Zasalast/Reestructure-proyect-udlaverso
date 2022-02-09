@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getAll } from "../../service/PersonsService";
+import { getAll } from "../../../service/PersonsService";
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 /* import { getInvoices } from "../../data"; */
-import api from "../../service/api2";
-import data from "./../../Data.json";
-import { Loading } from "../../components/Loading/Loading";
+import api from "../../../service/api2";
+import data from "./../../../Data.json";
+import { Loading } from "../../../components/Loading/Loading";
 const Teams = () => {
   const [state, setState] = useState({
     loading: true,

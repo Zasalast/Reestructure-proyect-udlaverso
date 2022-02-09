@@ -7,13 +7,17 @@ export const Signup = () => {
   const { t } = useTranslation();
 
   return (
-    <div>
-      <Row>
-        <Col>
-          <h1>{t("sing")}</h1>
-        </Col>
-      </Row>
-      <FormRegister />
+    <div className="container">
+      <div>
+        <div className="container">
+          <h1 className="text-huge">{t("sing")}</h1>
+        </div>
+      </div>
+      <div>
+        {" "}
+        <FormRegister />
+        <div />
+      </div>
     </div>
   );
 };

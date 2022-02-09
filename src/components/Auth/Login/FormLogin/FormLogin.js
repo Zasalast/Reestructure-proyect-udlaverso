@@ -27,43 +27,49 @@ const FormLogin = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1 className="text-center text-uppercase text-success text-big aligner aligner--centerHoritzontal aligner--centerVertical">
-        login
-      </h1>
-      <h2>
-        {authentication ? (
-          <div>{authentication}true</div>
-        ) : (
-          <div>{authentication}false</div>
-        )}
-        authentication
-      </h2>
-      <div className="input input-fullWidth">
-        <input
-          type="email"
-          name="Email"
-          value={email}
-          placeholder="Email"
-          onChange={({ target }) => setEmail(target.value)}
-        />
-      </div>
-      <div className="input input-fullWidth">
-        <input
-          id="test10"
-          type="password"
-          name="Password"
-          value={password}
-          placeholder="Password"
-          onChange={({ target }) => setPassword(target.value)}
-        />
-      </div>
-      <div className="aligner aligner--centerHoritzontal aligner--centerVertical">
-        <button className="button  button--small button--primary ">
-          login
-        </button>
-      </div>
-    </form>
+    <div>
+      {" "}
+      {authentication ? (
+        <div>
+          Has iniciado sesión, puedes disfrutar de nuevos beneficios de acuerdo
+          a su rol
+        </div>
+      ) : (
+        <div>
+          {" "}
+          <form onSubmit={handleSubmit}>
+            <h1 className="text-center text-uppercase text-success text-big aligner aligner--centerHoritzontal aligner--centerVertical">
+              login
+            </h1>
+            <h2>authentication</h2>
+            <div className="input input-fullWidth">
+              <input
+                type="email"
+                name="Email"
+                value={email}
+                placeholder="Email"
+                onChange={({ target }) => setEmail(target.value)}
+              />
+            </div>
+            <div className="input input-fullWidth">
+              <input
+                id="loginpassword"
+                type="password"
+                name="Password"
+                value={password}
+                placeholder="Password"
+                onChange={({ target }) => setPassword(target.value)}
+              />
+            </div>
+            <div className="aligner aligner--centerHoritzontal aligner--centerVertical">
+              <button className="button  button--small button--primary ">
+                login
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+    </div>
   );
 };
 

@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "../layout/Layout";
-import { LoginPage } from "../pages/public/Login";
+/* import { LoginPage } from "../pages/public/Login"; */
 import { About } from "../pages/public/About/About";
 import { Home } from "../pages/public/home";
-import { Teams } from "../pages/public/Teams";
+import { Teams } from "../pages/public/Team/Teams";
 import { Expenses } from "../pages/public/expenses";
 import { Invoices } from "../pages/private/Invoice/invoices";
 
@@ -23,6 +23,7 @@ import WhatDoWeDo from "../pages/public/WhatDoWeDo/WhatDoWeDo";
 import Person from "../pages/public/Person";
 import { Persons } from "../pages/public/Persons";
 import { Login } from "../components/Auth/Login/Login";
+import { Signup } from "../components/Auth/Signup/Signup";
 
 function RoutePublic() {
   return (
@@ -30,7 +31,8 @@ function RoutePublic() {
       {/*routes public*/}
       <Route path="/" element={<Layout />}>
         <Route path="about" element={<About />} />
-        <Route path="logins" element={<LoginPage />} />
+        {/*  <Route path="logins" element={<LoginPage />} /> */}
+        <Route path="singup" element={<Signup />} />
         <Route path="login" element={<Login />} />
         <Route path="expenses" element={<Expenses />} />
         <Route path="objetive" element={<Objetivos />} />

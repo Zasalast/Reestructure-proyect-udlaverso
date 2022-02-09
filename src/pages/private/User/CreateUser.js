@@ -44,7 +44,7 @@ function CreateUser() {
       setUser(user);
       let { access_token } = user;
 
-      setAccessToken(access_token);
+      /*  setAccessToken(access_token); */
 
       setEmail("");
       setPassword("");
@@ -53,23 +53,23 @@ function CreateUser() {
     }
   };
 
-  React.useEffect(() => {
+  /*  React.useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedNoteAppUser");
     if (loggedUserJSON) {
-      /* const user = JSON.parse(loggedUserJSON);
-      setUser(user); */
-      /*   noteService.setToken(user.token) */
+       const user = JSON.parse(loggedUserJSON);
+      setUser(user);  
+         noteService.setToken(user.token)  
     }
-  }, []);
+  }, []); */
   return (
-    <div>
-      Create User{" "}
+    <div className="container">
       <form onSubmit={handleCreateUser}>
         <h1 className="text-center text-uppercase text-success text-big aligner aligner--centerHoritzontal aligner--centerVertical">
-          login
+          Create User
         </h1>
         <div className="input input-fullWidth">
           <input
+            id="email"
             type="email"
             name="Email"
             value={email}
@@ -79,7 +79,7 @@ function CreateUser() {
         </div>
         <div className="input input-fullWidth">
           <input
-            id="test10"
+            id="password"
             type="password"
             name="Password"
             value={password}
@@ -87,9 +87,19 @@ function CreateUser() {
             onChange={({ target }) => setPassword(target.value)}
           />
         </div>
+        <div className="input input-fullWidth">
+          <input
+            id="confirmpassword"
+            type="password"
+            name="ConfirmPassword"
+            value={password}
+            placeholder="Confirm Password"
+            onChange={({ target }) => setPassword(target.value)}
+          />
+        </div>
         <div className="aligner aligner--centerHoritzontal aligner--centerVertical">
           <button className="button  button--small button--primary ">
-            login
+            Register
           </button>
         </div>
       </form>

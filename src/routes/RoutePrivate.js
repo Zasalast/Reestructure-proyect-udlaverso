@@ -10,7 +10,7 @@ import { CreateProduct } from "../pages/private/Product/CreateProduct";
 import { CreateUser } from "../pages/private/User/CreateUser";
 import { CreateOrder } from "../pages/private/Order/CreateOrder";
 import { Manager } from "../pages/private/User/Manager/Manager";
-import { Teams } from "../pages/public/Teams";
+import { Teams } from "../pages/public/Team/Teams";
 function RoutePrivate() {
   const handleLogout = () => {
     /* noteService.setToken(null) */
