@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 /* import { useAuth } from "./../../../components/Auth/Auth"; */
-import { setToken, CreateUserService } from "../../../service/UserService";
+import { setToken, CreateUserService } from "../../../service/Auth/UserService";
 function CreateUser() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

@@ -14,7 +14,7 @@ import {
 import {
   CreateProductService,
   setToken,
-} from "../../../service/ProductService";
+} from "../../../service/Product/ProductService";
 function CreateProduct() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");

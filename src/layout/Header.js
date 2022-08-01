@@ -21,13 +21,15 @@ function Headers({ children }) {
 
   useEffect(() => {
     dispatch(loading());
-  }, []);
+  }, [authentication]);
   const handleLogout = () => {
     /* 
  
     window.localStorage.removeItem("loggedNoteAppUser");
   }; */
-    dispatch(logout());
+    /* dispatch(logout()); */ {
+      console.log("adasd");
+    }
     /* window.localStorage.removeItem("loggedNoteAppUser"); */
   };
   return (
@@ -147,12 +149,20 @@ function Headers({ children }) {
               Ayuda
             </Link>{" "}
             {authentication ? (
-              <Link
-                to="/manager"
-                className="header-item tabs-item button button--transparent header-logout"
+              <select
+                onChange={(event) => handleChange(event.target.value)}
+                className="header-item tabs-item  button button--transparent header-logout"
               >
-                manager
-              </Link>
+                <option disabled className="">
+                  Manager
+                </option>
+                {/* <option value="#">Create</option> */}
+                <option value="/newcategory">category</option>
+                <option value="/newtypedata">typedata</option>
+                <option value="/newproduct">product</option>
+                <option value="/newuser">user</option>
+                <option value="/neworder">order</option>
+              </select>
             ) : (
               <></>
             )}
@@ -160,7 +170,7 @@ function Headers({ children }) {
             <div className="header-item tabs-item aligner--centerVertical  aligner--contentEnd logout-text text-white">
               {authentication ? (
                 <button
-                  onClick={() => handleLogout}
+                  onClick={() => handleLogout()}
                   className="text-white button button--transparent    header-logout"
                 >
                   logout

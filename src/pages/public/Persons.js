@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 /* import { getInvoices } from "../../data"; */
-import { getAll } from "../../service/PersonsService";
+import { getAll } from "../../service/Person/PersonsService";
 import { Loading } from "../../components/Loading/Loading";
 function Persons() {
   const [state, setState] = useState({

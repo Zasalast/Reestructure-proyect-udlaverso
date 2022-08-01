@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAll } from "../../../service/PersonsService";
+import { getAll } from "../../../service/Person/PersonsService";
 import { NavLink, Outlet, useSearchParams } from "react-router-dom";
 /* import { getInvoices } from "../../data"; */
 import api from "../../../service/api2";

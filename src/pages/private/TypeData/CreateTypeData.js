@@ -12,7 +12,7 @@ import {
 import {
   CreateTypeDataService,
   setToken,
-} from "../../../service/TypeDataService.js";
+} from "../../../service/TypeData/TypeDataService.js";
 
 /* import { useAuth } from "./../../../components/Auth/Auth"; */
 

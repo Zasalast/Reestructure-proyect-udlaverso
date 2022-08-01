@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { LoginService } from "../../service/UserService";
+import { LoginService } from "../../service/Auth/UserService";
 import { saveState, loadState } from "../../utils/localStorage";
 import { ServicesOffered } from "./servicesOffered/ServicesOffered";
 import ima_small from "./../../assets/construccion-small.png";

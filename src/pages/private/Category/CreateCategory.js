@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   CreateCategoryService,
   setToken,
-} from "../../../service/CategoryService";
+} from "../../../service/Category/CategoryService";
 
 function CreateCategory() {
   const [name, setName] = useState("");

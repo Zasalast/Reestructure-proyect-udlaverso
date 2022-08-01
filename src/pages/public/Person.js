@@ -1,5 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { getAll, getOnePersonService } from "../../service/PersonsService";
+import {
+  getAll,
+  getOnePersonService,
+} from "../../service/Person/PersonsService";
 import { Loading } from "../../components/Loading/Loading";
 import { useState, useEffect } from "react";
 
